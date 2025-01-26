@@ -26,12 +26,20 @@ module.exports = {
         helvetica: ["Helvetica", "sans-serif"],
         noto: ["Noto Sans", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+        retro: ["'Press Start 2P'", "cursive"],
       },
       animation: {
         shimmer: "shimmer 2s linear infinite",
         rotateShake: "rotateShake 0.5s ease-in-out",
+        'animate-border': 'borderAnimation 3s linear infinite',
+
       },
       keyframes: {
+        borderAnimation: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
         rotateShake: {
           '0%': { transform: 'rotate(0deg) translateX(0)' },
           '50%': { transform: 'rotate(-45deg) translateX(-5px)' },
@@ -81,6 +89,12 @@ module.exports = {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
+          purple: {
+            900: "#2c003e",
+          },
+          cyan: {
+            400: "#00ffd8",
+          },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

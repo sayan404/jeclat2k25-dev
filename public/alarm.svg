@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <style>
+    @keyframes secondhand-rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes minutehand-rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes hourhand-rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+  
+  <!-- Clock body -->
+  <circle cx="150" cy="150" r="140" fill="#f0f0f0" stroke="#333" stroke-width="10"/>
+  
+  <!-- Clock face -->
+  <circle cx="150" cy="150" r="130" fill="white"/>
+  
+  <!-- Hour markers -->
+  <g stroke="#333" stroke-width="3">
+    <line x1="150" y1="30" x2="150" y2="50" transform="rotate(0, 150, 150)"/>
+    <line x1="150" y1="30" x2="150" y2="50" transform="rotate(30, 150, 150)"/>
+    <line x1="150" y1="30" x2="150" y2="50" transform="rotate(60, 150, 150)"/>
+    <line x1="150" y1="30" x2="150" y2="50" transform="rotate(90, 150, 150)"/>
+    <line x1="150" y1="30" x2="150" y2="50" transform="rotate(120, 150, 150)"/>
+    <line x1="150" y1="30" x2="150" y2="50" transform="rotate(150, 150, 150)"/>
+    <line x1="150" y1="30" x2="150" y2="50" transform="rotate(180, 150, 150)"/>
+    <line x1="150" y1="30" x2="150" y2="50" transform="rotate(210, 150, 150)"/>
+    <line x1="150" y1="30" x2="150" y2="50" transform="rotate(240, 150, 150)"/>
+    <line x1="150" y1="30" x2="150" y2="50" transform="rotate(270, 150, 150)"/>
+    <line x1="150" y1="30" x2="150" y2="50" transform="rotate(300, 150, 150)"/>
+    <line x1="150" y1="30" x2="150" y2="50" transform="rotate(330, 150, 150)"/>
+  </g>
+  
+  <!-- Hour hand -->
+  <line x1="150" y1="150" x2="150" y2="90" stroke="#333" stroke-width="6" 
+        style="transform-origin: center; animation: hourhand-rotate 43200s linear infinite;"/>
+  
+  <!-- Minute hand -->
+  <line x1="150" y1="150" x2="150" y2="70" stroke="#666" stroke-width="4" 
+        style="transform-origin: center; animation: minutehand-rotate 3600s linear infinite;"/>
+  
+  <!-- Second hand -->
+  <line x1="150" y1="150" x2="150" y2="50" stroke="red" stroke-width="2" 
+        style="transform-origin: center; animation: secondhand-rotate 60s linear infinite;"/>
+  
+  <!-- Center pivot -->
+  <circle cx="150" cy="150" r="5" fill="#333"/>
+  
+  <!-- Alarm bell -->
+  <g fill="gold" stroke="#333" stroke-width="2">
+    <path d="M50 30 L70 50 Q90 40, 70 20 Z" />
+    <path d="M250 30 L230 50 Q210 40, 230 20 Z" />
+  </g>
+</svg>

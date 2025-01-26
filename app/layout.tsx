@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono , Doto , Noto_Sans , Poppins} from "next/font/google";
+import {
+  Geist,
+  Geist_Mono,
+  Doto,
+  Noto_Sans,
+  Poppins,
+  Press_Start_2P,
+  Cedarville_Cursive,
+} from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,17 +22,29 @@ const geistMono = Geist_Mono({
 const getPoppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["100" , "200" , "300" , "400", "500" , "600" , "700" , "900"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "900"],
 });
 const geistNoto = Noto_Sans({
   variable: "--font-noto-sans",
   subsets: ["latin"],
 });
 
+const pressStart2P = Press_Start_2P({
+  variable: "--font-press-start-2p",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+const cedarvilleCursive = Cedarville_Cursive({
+  variable: "--font-cedarville-cursive",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 const doto = Doto({
   variable: "--font-doto",
   subsets: ["latin"],
-  weight: ["400", "700" , "500", "900"], // Specify the weights you need
+  weight: ["400", "700", "500", "900"], // Specify the weights you need
 });
 
 export const metadata: Metadata = {
@@ -40,8 +60,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${doto.variable} ${geistNoto.variable} ${getPoppins.variable} antialiased`}
-        >
+        className={`${geistSans.variable} ${geistMono.variable} ${doto.variable} ${geistNoto.variable} ${getPoppins.variable} ${pressStart2P.variable} ${cedarvilleCursive.variable} antialiased`}
+      >
         {children}
       </body>
     </html>
