@@ -12,13 +12,13 @@ import {
   TeamIcon,
 } from "@/components/ui/svgicon";
 const links = [
-  { text: "about", href: "#", icon: <AboutIcon /> },
-  { text: "events", href: "#", icon: <EventsIcon /> },
-  { text: "social", href: "#", icon: <SocialIcon /> },
-  { text: "archive", href: "#", icon: <ArchiveIcon /> },
-  { text: "team", href: "#", icon: <TeamIcon /> },
-  { text: "contact", href: "#", icon: <ContactIcon /> },
-  { text: "merchandise", href: "#", icon: <MerchandiseIcon /> },
+  { text: "about", href: "http://localhost:3000/about", icon: <AboutIcon /> },
+  { text: "events", href: "http://localhost:3000/events", icon: <EventsIcon /> },
+  { text: "social", href: "http://localhost:3000/social", icon: <SocialIcon /> },
+  { text: "archive", href: "http://localhost:3000/archive", icon: <ArchiveIcon /> },
+  { text: "team", href: "http://localhost:3000/team", icon: <TeamIcon /> },
+  { text: "contact", href: "http://localhost:3000/contact", icon: <ContactIcon /> },
+  { text: "merchandise", href: "http://localhost:3000/merchandise", icon: <MerchandiseIcon /> },
 ];
 const Countdown = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -54,7 +54,7 @@ const Countdown = () => {
     <div className="relative text-center mt-8">
       <div className="relative inline-block p-3 px-6 border-2 rounded-[15px] border-cyan-400 bg-[#6B21A860]">
         <div className="text-lg md:text-2xl font-bold text-cyan-300 flex flex-col md:flex-row items-center gap-2 md:gap-5 opacity-85">
-            <div className="w-12 h-12 hidden md:block md:w-16 md:h-16">
+          <div className="w-12 h-12 hidden md:block md:w-16 md:h-16">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 300 300"
@@ -148,57 +148,6 @@ const Countdown = () => {
   );
 };
 
-// const AnimatedCards = ({
-//   links,
-// }: {
-//   links: {
-//     text: string;
-//     href: string;
-//     icon: JSX.Element;
-//   }[];
-// }) => {
-//   const container = {
-//     hidden: { opacity: 0 },
-//     show: {
-//       opacity: 1,
-//       transition: {
-//         staggerChildren: 0.2,
-//       },
-//     },
-//   };
-
-//   const card = {
-//     hidden: { opacity: 0, x: -50 },
-//     show: { opacity: 1, x: 0 },
-//   };
-
-//   return (
-//     <motion.div
-//     className="flex flex-col md:flex-row flex-wrap justify-center mt-12 space-x-8 space-y-8 md:space-y-0"
-//     variants={container}
-//     initial="hidden"
-//     animate="show"
-//   >
-//     {links.map((link: { text: string; href: string; icon: JSX.Element }) => (
-//       <motion.a
-//         key={link.text}
-//         href={link.href}
-//         variants={card}
-//         whileHover={{ rotate: [0, 5, -5, 0] }}
-//         transition={{ type: "spring", stiffness: 100 }}
-//         className="relative flex flex-col items-center text-center group z-50 p-6 border-2 border-cyan-400 backdrop-blur-xl rounded-2xl hover:shadow-xl hover:scale-105 transition-transform duration-300 w-40 md:w-48 lg:w-56"
-//       >
-//         <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500 opacity-10 rounded-2xl pointer-events-none"></div>
-//         <span className="text-3xl">{link.icon}</span>
-//         <span className="mt-2 text-sm uppercase text-cyan-400 font-bold group-hover:underline">
-//           {link.text}
-//         </span>
-//       </motion.a>
-//     ))}
-//   </motion.div>
-
-//   );
-// };
 const AnimatedCards = ({
   links,
 }: {
@@ -237,11 +186,11 @@ const AnimatedCards = ({
           variants={card}
           whileHover={{ rotate: [0, 5, -5, 0] }}
           transition={{ type: "spring", stiffness: 100 }}
-          className="relative flex flex-col items-center text-center group z-50 py-5 border-2 border-cyan-400 backdrop-blur-xl rounded-2xl hover:shadow-xl hover:scale-105 transition-transform duration-300 w-40 md:w-48"
+          className="relative flex flex-col items-center text-center group z-50 py-5 border-2 border-cyan-400 backdrop-blur-xl rounded-2xl hover:shadow-xl hover:scale-105 transition-transform duration-300 w-20 md:w-36"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500 opacity-10 rounded-2xl pointer-events-none"></div>
           <span className="text-3xl">{link.icon}</span>
-          <span className="mt-2 text-sm uppercase text-cyan-400 font-bold group-hover:underline">
+          <span className="mt-2 text-[10px] uppercase text-cyan-400 font-bold group-hover:underline">
             {link.text}
           </span>
         </motion.a>
@@ -250,7 +199,7 @@ const AnimatedCards = ({
   );
 };
 
-export default function Team() {
+export default function Home() {
   return (
     <div className="min-h-screen bg-purple-900 text-cyan-400 font-bold flex flex-col justify-center items-center relative overflow-hidden">
       <video
@@ -278,26 +227,25 @@ export default function Team() {
       </div>
       <div className="text-center">
         <motion.h1
-          className="text-4xl sm:text-6xl md:text-8xl uppercase font-extrabold tracking-wide bg-gradient-to-b from-white to-[#fffb00] bg-clip-text text-transparent"
+          className="text-4xl sm:text-6xl md:text-8xl uppercase font-extrabold tracking-wide bg-gradient-to-b from-white to-[#00B2A9] bg-clip-text text-transparent"
           animate={{ scale: [1, 1.1, 1] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
           {Array.from("JECLAT 2K25").map((letter, index) => (
-        <motion.span
-          key={index}
-          className="z-[200]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            delay: index * 0.1,
-            duration: 0.5,
-          }}
-          whileHover={{
-            textShadow: "0px 0px 10px rgba(255, 255, 255, 0.8)",
-          }}
-        >
-          {letter}
-        </motion.span>
+            <motion.span
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: index * 0.1,
+                duration: 0.5,
+              }}
+              whileHover={{
+                textShadow: "0px 0px 10px rgba(255, 255, 255, 0.8)",
+              }}
+            >
+              {letter}
+            </motion.span>
           ))}
         </motion.h1>
       </div>
