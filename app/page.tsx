@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, JSX } from "react";
+import { useState, useEffect, JSX, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   AboutIcon,
@@ -13,12 +13,32 @@ import {
 } from "@/components/ui/svgicon";
 const links = [
   { text: "about", href: "http://localhost:3000/about", icon: <AboutIcon /> },
-  { text: "events", href: "http://localhost:3000/events", icon: <EventsIcon /> },
-  { text: "social", href: "http://localhost:3000/social", icon: <SocialIcon /> },
-  { text: "archive", href: "http://localhost:3000/archive", icon: <ArchiveIcon /> },
+  {
+    text: "events",
+    href: "http://localhost:3000/events",
+    icon: <EventsIcon />,
+  },
+  {
+    text: "social",
+    href: "http://localhost:3000/social",
+    icon: <SocialIcon />,
+  },
+  {
+    text: "archive",
+    href: "http://localhost:3000/archive",
+    icon: <ArchiveIcon />,
+  },
   { text: "team", href: "http://localhost:3000/team", icon: <TeamIcon /> },
-  { text: "contact", href: "http://localhost:3000/contact", icon: <ContactIcon /> },
-  { text: "merchandise", href: "http://localhost:3000/merchandise", icon: <MerchandiseIcon /> },
+  {
+    text: "contact",
+    href: "http://localhost:3000/contact",
+    icon: <ContactIcon />,
+  },
+  {
+    text: "merchandise",
+    href: "http://localhost:3000/merchandise",
+    icon: <MerchandiseIcon />,
+  },
 ];
 const Countdown = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -184,9 +204,13 @@ const AnimatedCards = ({
           key={link.text}
           href={link.href}
           variants={card}
-          whileHover={{ rotate: [0, 5, -5, 0] }}
+          whileHover={{
+           scale: 1.1, 
+            boxShadow: "0px 0px 20px rgba(0, 255, 255, 0.8)", 
+            transition: { duration: 0.3, ease: "easeIn" },
+          }}
           transition={{ type: "spring", stiffness: 100 }}
-          className="relative flex flex-col items-center text-center group z-50 py-5 border-2 border-cyan-400 backdrop-blur-xl rounded-2xl hover:shadow-xl hover:scale-105 transition-transform duration-300 w-20 md:w-36"
+          className="relative flex flex-col items-center text-center group z-50 py-5 border-2 border-cyan-400 backdrop-blur-xl rounded-2xl hover:shadow-xl transition-transform duration-300 w-20 md:w-36"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500 opacity-10 rounded-2xl pointer-events-none"></div>
           <span className="text-3xl">{link.icon}</span>
@@ -198,15 +222,23 @@ const AnimatedCards = ({
     </motion.div>
   );
 };
-
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.4; 
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-purple-900 text-cyan-400 font-bold flex flex-col justify-center items-center relative overflow-hidden">
       <video
+        ref={videoRef}
         autoPlay
         loop
         muted
-        className="absolute w-auto min-w-full min-h-full max-w-none opacity-30"
+        className="absolute w-auto min-w-full min-h-full max-w-none opacity-60"
       >
         <source src="clock-black.mp4" type="video/mp4" />
         Your browser does not support the video tag.
@@ -228,7 +260,7 @@ export default function Home() {
       <div className="text-center">
         <motion.h1
           className="text-4xl sm:text-6xl md:text-8xl uppercase font-extrabold tracking-wide bg-gradient-to-b from-white to-[#00B2A9] bg-clip-text text-transparent"
-          animate={{ scale: [1, 1.1, 1] }}
+          animate={{ scale: [1, 1.04, 1] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
           {Array.from("JECLAT 2K25").map((letter, index) => (
