@@ -8,5 +8,6 @@ export interface NavItem {
 
 declare module "*.png" {
   const value: string;
+  // @ts-ignore
   export default value;
 } 
