@@ -13,6 +13,17 @@ export const AboutIcon = () => (
     </defs>
   </svg>
 );
+export const SmallAboutIcon = () => (
+  <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="25" cy="25" r="20" fill="none" stroke="url(#grad1)" strokeWidth="2.5"/>
+    <defs>
+      <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{ stopColor: 'rgb(255,0,0)', stopOpacity: 1 }} />
+        <stop offset="100%" style={{ stopColor: 'rgb(0,0,255)', stopOpacity: 1 }} />
+      </linearGradient>
+    </defs>
+  </svg>
+);
 
 export const EventsIcon = () => (
   <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
@@ -25,9 +36,27 @@ export const EventsIcon = () => (
     </defs>
   </svg>
 );
+export const SmallEventsIcon = () => (
+  <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
+    <path d="M25 5 Q35 10, 25 15 T25 25 T25 35 T25 45" fill="none" stroke="url(#grad2)" strokeWidth="2.5"/>
+    <defs>
+      <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style={{ stopColor: 'rgb(255,0,255)', stopOpacity: 1 }} />
+        <stop offset="100%" style={{ stopColor: 'rgb(0,255,255)', stopOpacity: 1 }} />
+      </linearGradient>
+    </defs>
+  </svg>
+);
 
 export const SocialIcon = () => (
   <svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="15" cy="15" r="10" fill="none" stroke="blue" strokeWidth="2.5"/>
+    <circle cx="35" cy="35" r="10" fill="none" stroke="red" strokeWidth="2.5"/>
+    <line x1="15" y1="15" x2="35" y2="35" stroke="green" strokeWidth="2.5"/>
+  </svg>
+);
+export const SmallSocialIcon = () => (
+  <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg">
     <circle cx="15" cy="15" r="10" fill="none" stroke="blue" strokeWidth="2.5"/>
     <circle cx="35" cy="35" r="10" fill="none" stroke="red" strokeWidth="2.5"/>
     <line x1="15" y1="15" x2="35" y2="35" stroke="green" strokeWidth="2.5"/>

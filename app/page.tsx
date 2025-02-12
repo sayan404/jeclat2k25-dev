@@ -1,45 +1,166 @@
 "use client";
 
 import { useState, useEffect, JSX, useRef } from "react";
-import { motion } from "framer-motion";
-import {
-  AboutIcon,
-  ArchiveIcon,
-  ContactIcon,
-  EventsIcon,
-  MerchandiseIcon,
-  SocialIcon,
-  TeamIcon,
-} from "@/components/ui/svgicon";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+
 const links = [
-  { text: "about", href: "http://localhost:3000/about", icon: <AboutIcon /> },
+  {
+    text: "about",
+    href: "/about",
+    icon: (
+      <div
+        className="w-8 h-8 md:w-16 md:h-16 text-cyan-400 flex items-center justify-center
+        rounded-full bg-black/20 border-2 border-cyan-400/50 overflow-hidden
+        shadow-[0_0_15px_rgba(0,255,255,0.3)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.5)]
+        transition-all duration-300"
+      >
+        <Image
+          src="/assets/pic_6.svg"
+          alt="About"
+          width={60}
+          height={60}
+          className="object-cover w-full h-full hover:scale-110 transition-transform duration-300
+            group-hover:brightness-110"
+          priority
+        />
+      </div>
+    ),
+  },
   {
     text: "events",
-    href: "http://localhost:3000/events",
-    icon: <EventsIcon />,
+    href: "/events",
+    icon: (
+      <div
+        className="w-8 h-8 md:w-16 md:h-16 text-cyan-400 flex items-center justify-center
+        rounded-full bg-black/20 border-2 border-cyan-400/50 overflow-hidden
+        shadow-[0_0_15px_rgba(0,255,255,0.3)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.5)]
+        transition-all duration-300"
+      >
+        <Image
+          src="/assets/pic_8.svg"
+          alt="Events"
+          width={60}
+          height={60}
+          className="object-cover w-full h-full hover:scale-110 transition-transform duration-300
+            group-hover:brightness-110"
+          priority
+        />
+      </div>
+    ),
   },
   {
     text: "social",
-    href: "http://localhost:3000/social",
-    icon: <SocialIcon />,
+    href: "/social",
+    icon: (
+      <div
+        className="w-8 h-8 md:w-16 md:h-16 text-cyan-400 flex items-center justify-center
+        rounded-full bg-black/20 border-2 border-cyan-400/50 overflow-hidden
+        shadow-[0_0_15px_rgba(0,255,255,0.3)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.5)]
+        transition-all duration-300"
+      >
+        <Image
+          src="/assets/pic_4.svg"
+          alt="Social"
+          width={60}
+          height={60}
+          className="object-cover w-full h-full hover:scale-110 transition-transform duration-300
+            group-hover:brightness-110"
+          priority
+        />
+      </div>
+    ),
   },
   {
     text: "archive",
-    href: "http://localhost:3000/archive",
-    icon: <ArchiveIcon />,
+    href: "/archive",
+    icon: (
+      <div
+        className="w-8 h-8 md:w-16 md:h-16 text-cyan-400 flex items-center justify-center
+        rounded-full bg-black/20 border-2 border-cyan-400/50 overflow-hidden
+        shadow-[0_0_15px_rgba(0,255,255,0.3)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.5)]
+        transition-all duration-300"
+      >
+        <Image
+          src="/assets/pic_10.svg"
+          alt="Archive"
+          width={60}
+          height={60}
+          className="object-cover w-full h-full hover:scale-110 transition-transform duration-300
+            group-hover:brightness-110"
+          priority
+        />
+      </div>
+    ),
   },
-  { text: "team", href: "http://localhost:3000/team", icon: <TeamIcon /> },
+  {
+    text: "team",
+    href: "/team",
+    icon: (
+      <div
+        className="w-8 h-8 md:w-16 md:h-16 text-cyan-400 flex items-center justify-center
+        rounded-full bg-black/20 border-2 border-cyan-400/50 overflow-hidden
+        shadow-[0_0_15px_rgba(0,255,255,0.3)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.5)]
+        transition-all duration-300"
+      >
+        <Image
+          src="/assets/pic_9.svg"
+          alt="Team"
+          width={60}
+          height={60}
+          className="object-cover w-full h-full hover:scale-110 transition-transform duration-300
+            group-hover:brightness-110"
+          priority
+        />
+      </div>
+    ),
+  },
   {
     text: "contact",
-    href: "http://localhost:3000/contact",
-    icon: <ContactIcon />,
+    href: "/contact",
+    icon: (
+      <div
+        className="w-8 h-8 md:w-16 md:h-16 text-cyan-400 flex items-center justify-center
+        rounded-full bg-black/20 border-2 border-cyan-400/50 overflow-hidden
+        shadow-[0_0_15px_rgba(0,255,255,0.3)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.5)]
+        transition-all duration-300"
+      >
+        <Image
+          src="/assets/pic_6.svg"
+          alt="Contact"
+          width={60}
+          height={60}
+          className="object-cover w-full h-full hover:scale-110 transition-transform duration-300
+            group-hover:brightness-110"
+          priority
+        />
+      </div>
+    ),
   },
   {
     text: "merchandise",
-    href: "http://localhost:3000/merchandise",
-    icon: <MerchandiseIcon />,
+    href: "/merchandise",
+    icon: (
+      <div
+        className="w-8 h-8 md:w-16 md:h-16 text-cyan-400 flex items-center justify-center
+        rounded-full bg-black/20 border-2 border-cyan-400/50 overflow-hidden
+        shadow-[0_0_15px_rgba(0,255,255,0.3)] group-hover:shadow-[0_0_20px_rgba(0,255,255,0.5)]
+        transition-all duration-300"
+      >
+        <Image
+          src="/assets/pic_5.svg"
+          alt="Merchandise"
+          width={60}
+          height={60}
+          className="object-cover w-full h-full hover:scale-110 transition-transform duration-300
+            group-hover:brightness-110"
+          priority
+        />
+      </div>
+    ),
   },
 ];
+
 const Countdown = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -71,99 +192,59 @@ const Countdown = () => {
   }, []);
 
   return (
-    <div className="relative text-center mt-8">
-      <div className="relative inline-block p-3 px-6 border-2 rounded-[15px] border-cyan-400 bg-[#6B21A860]">
-        <div className="text-lg md:text-2xl font-bold text-cyan-300 flex flex-col md:flex-row items-center gap-2 md:gap-5 opacity-85">
-          <div className="w-12 h-12 hidden md:block md:w-16 md:h-16">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 300 300"
-              className="w-full h-full"
+    <div className="relative text-center mt-4">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="relative inline-flex gap-6 p-6 rounded-[15px]
+          bg-gradient-to-r from-purple-900/50 via-indigo-900/50 to-blue-900/50
+          backdrop-blur-xl border-2 border-cyan-400/20
+          shadow-[0_8px_32px_rgba(31,_41,_55,_0.5)]
+          hover:shadow-[0_8px_32px_rgba(0,255,255,0.2)]
+          transition-all duration-300"
+      >
+        {[
+          { label: "DAYS", value: timeLeft.days },
+          { label: "HOURS", value: timeLeft.hours },
+          { label: "MINS", value: timeLeft.minutes },
+          { label: "SECS", value: timeLeft.seconds },
+        ].map((item, index) => (
+          <div key={item.label} className="flex flex-col items-center">
+            <motion.div
+              className="p-3 px-7 flex items-center justify-center overflow-hidden
+                bg-black/40 rounded-[10px] border-2 border-cyan-400/20
+                text-[15px] font-bold text-cyan-300 
+                shadow-[0_4px_12px_rgba(0,255,255,0.1)]
+                hover:shadow-[0_4px_16px_rgba(0,255,255,0.2)]
+                transition-all duration-300"
             >
-              <style>{`
-                @keyframes secondhand-rotate {
-                  from { transform: rotate(0deg); }
-                  to { transform: rotate(360deg); }
-                }
-                @keyframes minutehand-rotate {
-                  from { transform: rotate(0deg); }
-                  to { transform: rotate(360deg); }
-                }
-                @keyframes hourhand-rotate {
-                  from { transform: rotate(0deg); }
-                  to { transform: rotate(360deg); }
-                }
-              `}</style>
-              <circle
-                cx="150"
-                cy="150"
-                r="140"
-                fill="#f0f0f0"
-                stroke="#333"
-                strokeWidth="10"
-              />
-              <circle cx="150" cy="150" r="130" fill="white" />
-              <g stroke="#333" strokeWidth="3">
-                {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map(
-                  (angle) => (
-                    <line
-                      key={angle}
-                      x1="150"
-                      y1="30"
-                      x2="150"
-                      y2="50"
-                      transform={`rotate(${angle}, 150, 150)`}
-                    />
-                  )
-                )}
-              </g>
-              <line
-                x1="150"
-                y1="150"
-                x2="150"
-                y2="90"
-                stroke="#333"
-                strokeWidth="6"
-                style={{
-                  transformOrigin: "center",
-                  animation: "hourhand-rotate 43200s linear infinite",
-                }}
-              />
-              <line
-                x1="150"
-                y1="150"
-                x2="150"
-                y2="70"
-                stroke="#666"
-                strokeWidth="4"
-                style={{
-                  transformOrigin: "center",
-                  animation: "minutehand-rotate 3600s linear infinite",
-                }}
-              />
-              <line
-                x1="150"
-                y1="150"
-                x2="150"
-                y2="50"
-                stroke="red"
-                strokeWidth="2"
-                style={{
-                  transformOrigin: "center",
-                  animation: "secondhand-rotate 60s linear infinite",
-                }}
-              />
-              <circle cx="150" cy="150" r="5" fill="#333" />
-              <g fill="gold" stroke="#333" strokeWidth="2">
-                <path d="M50 30 L70 50 Q90 40, 70 20 Z" />
-                <path d="M250 30 L230 50 Q210 40, 230 20 Z" />
-              </g>
-            </svg>
+              <AnimatePresence mode="popLayout">
+                <motion.span
+                  key={item.value}
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -20, opacity: 0 }}
+                  transition={{
+                    y: { type: "spring", stiffness: 300, damping: 30 },
+                    opacity: { duration: 0.2 },
+                  }}
+                  className="font-mono tracking-wider absolute"
+                >
+                  {String(item.value).padStart(2, "0")}
+                </motion.span>
+              </AnimatePresence>
+              {/* Invisible span to maintain container size */}
+              <span className="font-mono tracking-wider invisible">
+                {String(item.value).padStart(2, "0")}
+              </span>
+            </motion.div>
+            <span className="text-[12px] font-medium text-cyan-400/90 mt-2 tracking-widest">
+              {item.label}
+            </span>
           </div>
-          {timeLeft.days}d : {timeLeft.hours}h : {timeLeft.minutes}m :{" "}
-          {timeLeft.seconds}s
-        </div>
-      </div>
+        ))}
+      </motion.div>
     </div>
   );
 };
@@ -199,22 +280,26 @@ const AnimatedCards = ({
       initial="hidden"
       animate="show"
     >
-      {links.map((link: { text: string; href: string; icon: JSX.Element }) => (
+      {links.map((link) => (
         <motion.a
           key={link.text}
           href={link.href}
           variants={card}
           whileHover={{
-           scale: 1.1, 
-            boxShadow: "0px 0px 20px rgba(0, 255, 255, 0.8)", 
-            transition: { duration: 0.3, ease: "easeIn" },
+            scale: 1.1,
+            boxShadow: "0px 0px 20px rgba(0, 255, 255, 0.8)",
           }}
           transition={{ type: "spring", stiffness: 100 }}
-          className="relative flex flex-col items-center text-center group z-50 py-5 border-2 border-cyan-400 backdrop-blur-xl rounded-2xl hover:shadow-xl transition-transform duration-300 w-20 md:w-36"
+          className="relative flex flex-col items-center text-center group z-50 py-5
+            border-2 border-cyan-400 backdrop-blur-xl rounded-2xl 
+            hover:shadow-xl transition-all duration-300 
+            w-25 md:w-40"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500 opacity-10 rounded-2xl pointer-events-none"></div>
-          <span className="text-3xl">{link.icon}</span>
-          <span className="mt-2 text-[10px] uppercase text-cyan-400 font-bold group-hover:underline">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500 opacity-10 rounded-2xl pointer-events-none" />
+          <div className="relative w-12 h-12 md:w-16 md:h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            {link.icon}
+          </div>
+          <span className="mt-3 text-[10px] md:text-xs uppercase text-cyan-400 font-bold group-hover:underline">
             {link.text}
           </span>
         </motion.a>
@@ -227,7 +312,7 @@ export default function Home() {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.4; 
+      videoRef.current.playbackRate = 0.4;
     }
   }, []);
 
@@ -243,6 +328,23 @@ export default function Home() {
         <source src="clock-black.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+
+      {/* Add Logo */}
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="absolute top-10 left-10 z-50"
+      >
+        <Image
+          src="/logo.png"
+          alt="Jeclat Logo"
+          width={130}
+          height={130}
+          className="drop-shadow-[0_0_15px_rgba(0,255,255,0.5)] hover:scale-110 transition-transform duration-300"
+        />
+      </motion.div>
+
       <div className="absolute inset-0 m-5 border-4 border-cyan-400 pointer-events-none backdrop-blur-[10PX] rounded-[20px]" />
       <div className="m-4">
         {/* Top Left Corner Border */}
