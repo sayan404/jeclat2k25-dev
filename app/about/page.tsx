@@ -62,7 +62,7 @@ const AboutPage = () => {
 
         {/* Animated Center Icon with enhanced effects */}
         <motion.div
-          className="relative mb-20"
+          className="relative mb-10"
           animate={{
             scale: [1, 1.05, 1],
             rotate: [0, 3, -3, 0],
@@ -84,16 +84,16 @@ const AboutPage = () => {
             <Image
               src="/assets/pic_6.svg"
               alt="Glow Effect"
-              width={200}
-              height={200}
+              width={170}
+              height={170}
               className="mx-auto"
             />
           </motion.div>
           <Image
             src="/assets/pic_6.svg"
             alt="About Icon"
-            width={200}
-            height={200}
+            width={170}
+            height={170}
             className="mx-auto relative z-10 drop-shadow-[0_0_25px_rgba(0,255,255,0.5)]"
           />
         </motion.div>
