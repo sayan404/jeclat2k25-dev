@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
+:root {
+  --dark-purple: #2D1E5F;
+  --orange-yellow: #FFA500;
+  --white: #FFFFFF;
+  --dark-shadow: #1A0D3A;
+  --beige: #D9B38C;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif , Doto;
 }
@@ -19,9 +29,9 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
+/* body {
   @apply bg-purple-900 text-cyan-400 font-retro;
-}
+} */
 
 
 

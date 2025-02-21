@@ -10,15 +10,22 @@ module.exports = {
     "./app/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-
-    // Or if using `src` directory:
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: ["class", "class"],
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Doto", "sans-serif"],
+        // Modern Sans-Serif Fonts for Headings
+        display: ["Space Grotesk", "Inter", "system-ui", "sans-serif"],
+        heading: ["Outfit", "Inter", "system-ui", "sans-serif"],
+        title: ["Cabinet Grotesk", "Inter", "system-ui", "sans-serif"],
+
+        // Clean, Readable Fonts for Body Text
+        body: ["Inter", "system-ui", "sans-serif"],
+        sans: ["Inter", "system-ui", "sans-serif"],
+
+        // Existing Fonts
         mono: ["Geist Mono", "monospace"],
         arial: ["Arial", "sans-serif"],
         geist: ["Geist", "sans-serif"],
@@ -27,22 +34,49 @@ module.exports = {
         noto: ["Noto Sans", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
         retro: ["'Press Start 2P'", "cursive"],
+
+        // Additional Modern Fonts
+        cal: ["Cal Sans", "Inter", "sans-serif"],
+        space: ["Space Grotesk", "sans-serif"],
+        outfit: ["Outfit", "sans-serif"],
+      },
+      fontSize: {
+        // Custom font sizes for better typography
+        "display-2xl": ["4.5rem", { lineHeight: "5.625rem" }],
+        "display-xl": ["3.75rem", { lineHeight: "4.5rem" }],
+        "display-lg": ["3rem", { lineHeight: "3.75rem" }],
+        "display-md": ["2.25rem", { lineHeight: "2.75rem" }],
+        "display-sm": ["1.875rem", { lineHeight: "2.375rem" }],
+        "body-lg": ["1.125rem", { lineHeight: "1.75rem" }],
+        "body-base": ["1rem", { lineHeight: "1.5rem" }],
+        "body-sm": ["0.875rem", { lineHeight: "1.25rem" }],
+      },
+      letterSpacing: {
+        "ultra-tight": "-0.1em",
+        "super-tight": "-0.05em",
+        "ultra-wide": "0.1em",
+        "super-wide": "0.15em",
       },
       animation: {
         shimmer: "shimmer 2s linear infinite",
         rotateShake: "rotateShake 0.5s ease-in-out",
-        'animate-border': 'borderAnimation 3s linear infinite',
-
+        "animate-border": "borderAnimation 3s linear infinite",
+        "fade-in": "fadeIn 0.5s ease-in-out",
+        "slide-up": "slideUp 0.5s ease-out",
+        "pop-in": "popIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+      },
+      backgroundImage: {
+        "gradient-sky": "linear-gradient(to bottom, #2D1E5F, #FFA500)",
       },
       keyframes: {
         borderAnimation: {
-          '0%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-          '100%': { backgroundPosition: '0% 50%' },
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
         },
         rotateShake: {
-          '0%': { transform: 'rotate(0deg) translateX(0)' },
-          '50%': { transform: 'rotate(-45deg) translateX(-5px)' },
+          "0%": { transform: "rotate(0deg) translateX(0)" },
+          "50%": { transform: "rotate(-45deg) translateX(-5px)" },
         },
         shimmer: {
           from: {
@@ -52,6 +86,28 @@ module.exports = {
             backgroundPosition: "-200% 0",
           },
         },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        slideUp: {
+          "0%": { transform: "translateY(20px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        popIn: {
+          "0%": { transform: "scale(0.8)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
+      },
+      textShadow: {
+        glow: "0 0 10px rgba(255, 255, 255, 0.5)",
+        neon: "0 0 5px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3)",
+        sharp: "2px 2px 0px rgba(0, 0, 0, 0.3)",
+      },
+      lineHeight: {
+        relaxed: "1.75",
+        loose: "2",
+        "ultra-loose": "2.5",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -61,6 +117,10 @@ module.exports = {
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        "dark-purple": "#2D1E5F",
+        "orange-yellow": "#FFA500",
+        "dark-shadow": "#1A0D3A",
+        beige: "#D9B38C",
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
@@ -89,12 +149,12 @@ module.exports = {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-          purple: {
-            900: "#2c003e",
-          },
-          cyan: {
-            400: "#00ffd8",
-          },
+        purple: {
+          900: "#2c003e",
+        },
+        cyan: {
+          400: "#00ffd8",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

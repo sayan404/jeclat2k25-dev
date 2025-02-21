@@ -126,7 +126,7 @@ const links = [
         transition-all duration-300"
       >
         <Image
-          src="/assets/pic_6.svg"
+          src="/assets/pic_1.svg"
           alt="Contact"
           width={60}
           height={60}
@@ -192,7 +192,7 @@ const Countdown = () => {
   }, []);
 
   return (
-    <div className="relative text-center mt-4">
+    <div className="relative text-center mt-4 ">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -309,25 +309,55 @@ const AnimatedCards = ({
 };
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.4;
+      // Force video load and play
+      videoRef.current.load();
+      const playPromise = videoRef.current.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            // Video started playing
+            console.log("Video started playing successfully");
+          })
+          .catch((error) => {
+            // Auto-play was prevented
+            console.error("Video playback error:", error);
+          });
+      }
     }
   }, []);
 
   return (
-    <div className="min-h-screen bg-purple-900 text-cyan-400 font-bold flex flex-col justify-center items-center relative overflow-hidden">
+    <div className="min-h-screen text-cyan-400 font-bold flex flex-col justify-center items-center relative overflow-hidden">
       <video
         ref={videoRef}
         autoPlay
         loop
         muted
-        className="absolute w-auto min-w-full min-h-full max-w-none opacity-60"
+        playsInline
+        className={`absolute w-auto min-w-full min-h-full max-w-none ${
+          isVideoLoaded ? "visible" : "invisible"
+        }`}
+        onLoadedData={() => setIsVideoLoaded(true)}
+        onError={(e) => {
+          console.error("Video error:", e);
+        }}
       >
-        <source src="clock-black.mp4" type="video/mp4" />
+        <source src="/clock-black_3.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+
+      {/* Optional loading indicator */}
+      {!isVideoLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-cyan-400"></div>
+        </div>
+      )}
 
       {/* Add Logo */}
       <motion.div
