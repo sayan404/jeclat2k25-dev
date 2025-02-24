@@ -4,6 +4,7 @@ import React from "react";
 import StarBackground from "@/app/components/StarBackground";
 import { Orbitron, Rajdhani, Audiowide } from "next/font/google";
 import Header from "@/app/components/Header";
+import Image from "next/image";
 
 const orbitron = Orbitron({ subsets: ["latin"] });
 const rajdhani = Rajdhani({
@@ -14,13 +15,13 @@ const audiowide = Audiowide({ weight: "400", subsets: ["latin"] });
 
 const styles = {
   orbit: `
-    @keyframes orbit {
+    ..keyframes orbit {
       from { transform: rotate(0deg) translateX(0) rotate(0deg); }
       to { transform: rotate(360deg) translateX(0) rotate(-360deg); }
     }
   `,
   spaceshipOrbit: `
-    @keyframes spaceshipOrbit {
+    ..keyframes spaceshipOrbit {
       0% { transform: translate(0, 0); }
       50% { transform: translate(-50px, 20px); }
       100% { transform: translate(0, 0); }
@@ -28,9 +29,45 @@ const styles = {
   `,
 };
 
+const sponsors = [
+  { src: "/sponsers/asian-paints.svg", alt: "Asian Paints", type: "svg" },
+  { src: "/sponsers/bajaj.svg", alt: "Bajaj", type: "svg" },
+  { src: "/sponsers/big-bazaar.svg", alt: "Big Bazaar", type: "svg" },
+  { src: "/sponsers/city-life.png", alt: "City Life", type: "image" },
+  { src: "/sponsers/dominos.svg", alt: "Dominos", type: "svg" },
+  { src: "/sponsers/dtdc.svg", alt: "DTDC", type: "svg" },
+  { src: "/sponsers/galaxy-music.png", alt: "Galaxy Music", type: "image" },
+  { src: "/sponsers/hero.svg", alt: "Hero", type: "svg" },
+  { src: "/sponsers/hyundai.svg", alt: "Hyundai", type: "svg" },
+  { src: "/sponsers/indian-oil.svg", alt: "Indian Oil", type: "svg" },
+  { src: "/sponsers/internshala.svg", alt: "Internshala", type: "svg" },
+  { src: "/sponsers/jagran.svg", alt: "Jagran", type: "svg" },
+  { src: "/sponsers/kotak.svg", alt: "Kotak", type: "svg" },
+  { src: "/sponsers/ktm.svg", alt: "KTM", type: "svg" },
+  { src: "/sponsers/lic.svg", alt: "LIC", type: "svg" },
+  { src: "/sponsers/monster.svg", alt: "Monster", type: "svg" },
+  { src: "/sponsers/pran.svg", alt: "Pran", type: "svg" },
+  { src: "/sponsers/radio-misti.svg", alt: "Radio Misti", type: "svg" },
+  { src: "/sponsers/red-bull.svg", alt: "Red Bull", type: "svg" },
+  { src: "/sponsers/sbi.svg", alt: "SBI", type: "svg" },
+  { src: "/sponsers/svf.svg", alt: "SVF", type: "svg" },
+  { src: "/sponsers/the-statesman.svg", alt: "The Statesman", type: "svg" },
+  {
+    src: "/sponsers/uttarbanga-sambad.png",
+    alt: "Uttarbanga Sambad",
+    type: "image",
+  },
+  { src: "/sponsers/vi.svg", alt: "Vi", type: "svg" },
+  { src: "/sponsers/volvo.png", alt: "Volvo", type: "image" },
+  // { src: "/sponsers/wawasi.svg", alt: "Wawasi", type: "svg" },
+  { src: "/sponsers/zebronics.png", alt: "Zebronics", type: "image" },
+];
+
+console.log(sponsors);
+
 export default function AboutPage() {
   return (
-    <div className="relative max-h-screen lg:overflow-hidden">
+    <div className="relative lg:overflow-hidden">
       <StarBackground />
       <Header />
 
@@ -708,6 +745,85 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.3 }}
+            className="mt-16"
+          >
+            <h2
+              className={`${orbitron.className} text-4xl font-bold text-center mb-12 bg-gradient-to-r from-purple-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent`}
+            >
+              Our Past Sponsors
+            </h2>
+
+            <div className="relative">
+              {/* Gradient background with blur effect */}
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 via-black/50 to-cyan-900/30 backdrop-blur-xl rounded-xl border border-white/10" />
+
+              {/* Sponsors grid */}
+              <div className="relative grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 p-8 rounded-xl">
+                {sponsors.map((sponsor, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.05 }}
+                    className="aspect-square relative group bg-white rounded-lg p-4 hover:bg-white/10 transition-all duration-300 border border-white/5 hover:border-white/20"
+                  >
+                    {sponsor.type === "svg" ? (
+                      <object
+                        data={sponsor.src}
+                        type="image/svg+xml"
+                        className="w-full h-full transition-all duration-300 filter grayscale hover:grayscale-0 hover:scale-105"
+                      >
+                        {sponsor.alt}
+                      </object>
+                    ) : (
+                      <Image
+                        src={sponsor.src}
+                        alt={sponsor.alt}
+                        fill
+                        sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                        className="object-contain p-2 transition-all duration-300 filter grayscale hover:grayscale-0 hover:scale-105"
+                      />
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Contact section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 1.5 }}
+              className="text-center mt-12"
+            >
+              <p className={`${rajdhani.className} text-xl text-white/80`}>
+                Interested in sponsoring JECLAT?
+              </p>
+              <a
+                href="/contact"
+                className="inline-flex items-center mt-4 px-6 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-full group hover:scale-105 transition-all duration-300"
+              >
+                Contact us
+                <svg
+                  className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </a>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>

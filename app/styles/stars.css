@@ -1,0 +1,147 @@
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 
+    1979px 1073px #fff,
+    957px 1153px #fff,
+    1747px 1873px #fff,
+    1627px 1523px #fff,
+    2155px 956px #fff,
+    1912px 1782px #fff,
+    1567px 1562px #fff,
+    1803px 1241px #fff,
+    1535px 1178px #fff,
+    1235px 1260px #fff,
+    1289px 1428px #fff,
+    1044px 1593px #fff,
+    1921px 1789px #fff,
+    1063px 788px #fff,
+    1597px 1507px #fff,
+    1621px 1815px #fff,
+    1112px 1565px #fff,
+    1644px 1555px #fff,
+    1596px 1789px #fff,
+    1298px 1432px #fff,
+    925px 1543px #fff,
+    1802px 1527px #fff;
+  animation: glitter 10s linear infinite;
+}
+
+.stars2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: 
+    1235px 1260px #fff,
+    1289px 1428px #fff,
+    1044px 1593px #fff,
+    1921px 1789px #fff,
+    1063px 788px #fff,
+    1597px 1507px #fff,
+    1621px 1815px #fff,
+    1112px 1565px #fff,
+    1644px 1555px #fff,
+    1596px 1789px #fff,
+    1298px 1432px #fff,
+    925px 1543px #fff,
+    1802px 1527px #fff;
+  animation: glitter 15s linear infinite;
+}
+
+.stars3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 
+    1979px 1073px #fff,
+    957px 1153px #fff,
+    1747px 1873px #fff,
+    1627px 1523px #fff,
+    2155px 956px #fff,
+    1912px 1782px #fff,
+    1567px 1562px #fff,
+    1803px 1241px #fff,
+    1535px 1178px #fff;
+  animation: glitter 20s linear infinite;
+}
+
+@keyframes glitter {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-2000px);
+    opacity: 0.8;
+  }
+}
+
+/* Add twinkling effect */
+.twinkle {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Add shooting stars */
+.shooting-star {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.1),
+              0 0 0 8px rgba(255,255,255,0.1),
+              0 0 20px rgba(255,255,255,1);
+  animation: shoot 3s ease-in-out infinite;
+}
+
+.shooting-star::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 1px;
+  background: linear-gradient(90deg, #fff, transparent);
+}
+
+@keyframes shoot {
+  0% {
+    transform: rotate(315deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(315deg) translateX(-1000px);
+    opacity: 0;
+  }
+} 

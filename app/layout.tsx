@@ -9,6 +9,7 @@ import {
   Cedarville_Cursive,
 } from "next/font/google";
 import "./globals.css";
+import './styles/stars.css'
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import Header from "@/app/components/Header";
 
-const AboutPage = () => {
+const EventsPage = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
@@ -62,7 +62,7 @@ const AboutPage = () => {
 
         {/* Animated Center Icon with enhanced effects */}
         <motion.div
-          className="relative mb-20"
+          className="relative mb-10"
           animate={{
             scale: [1, 1.05, 1],
             rotate: [0, 3, -3, 0],
@@ -84,16 +84,16 @@ const AboutPage = () => {
             <Image
               src="/assets/pic_6.svg"
               alt="Glow Effect"
-              width={200}
-              height={200}
+              width={170}
+              height={170}
               className="mx-auto"
             />
           </motion.div>
           <Image
             src="/assets/pic_6.svg"
             alt="About Icon"
-            width={200}
-            height={200}
+            width={170}
+            height={170}
             className="mx-auto relative z-10 drop-shadow-[0_0_25px_rgba(0,255,255,0.5)]"
           />
         </motion.div>
@@ -128,46 +128,9 @@ const AboutPage = () => {
             </div>
           </motion.div>
         </motion.div>
-
-        {/* Enhanced Notification Form */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="mt-16"
-        >
-          <p className="text-xl text-cyan-300/90 mb-6 tracking-wide">
-            Want to be notified when we launch?
-          </p>
-          <button className="group relative overflow-hidden px-12 py-5 bg-transparent rounded-lg">
-            <span
-              className="absolute inset-0 w-full h-full transition-all duration-300 
-              bg-gradient-to-r from-purple-900/50 to-indigo-900/50 group-hover:opacity-0"
-            />
-            <span
-              className="absolute inset-0 w-3 bg-gradient-to-r from-[#FFD700] via-[#FFA500] to-[#FFD700]
-              transition-all duration-500 ease-out group-hover:w-full"
-            />
-            <span
-              className="relative text-white group-hover:text-[#1a0b2e] 
-              transition-colors duration-300 text-xl font-bold tracking-wider uppercase"
-            >
-              Notify Me
-            </span>
-          </button>
-        </motion.div>*/}
       </div> 
-
-      {/* Decorative Elements */}
-      {/* <div className="absolute bottom-0 left-0 w-full h-px">
-        <motion.div
-          className="h-px bg-gradient-to-r from-transparent via-[#FFD700]/30 to-transparent"
-          animate={{ opacity: [0.3, 0.6, 0.3] }}
-          transition={{ duration: 3, repeat: Infinity }}
-        />
-      </div> */}
     </main>
   );
 };
 
-export default AboutPage;
+export default EventsPage;

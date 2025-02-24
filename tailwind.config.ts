@@ -16,16 +16,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        // Modern Sans-Serif Fonts for Headings
         display: ["Space Grotesk", "Inter", "system-ui", "sans-serif"],
         heading: ["Outfit", "Inter", "system-ui", "sans-serif"],
         title: ["Cabinet Grotesk", "Inter", "system-ui", "sans-serif"],
-
-        // Clean, Readable Fonts for Body Text
+        astral: ["astral-studio", "sans-serif"],    
         body: ["Inter", "system-ui", "sans-serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
-
-        // Existing Fonts
         mono: ["Geist Mono", "monospace"],
         arial: ["Arial", "sans-serif"],
         geist: ["Geist", "sans-serif"],
@@ -34,8 +30,6 @@ module.exports = {
         noto: ["Noto Sans", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
         retro: ["'Press Start 2P'", "cursive"],
-
-        // Additional Modern Fonts
         cal: ["Cal Sans", "Inter", "sans-serif"],
         space: ["Space Grotesk", "sans-serif"],
         outfit: ["Outfit", "sans-serif"],
@@ -64,11 +58,25 @@ module.exports = {
         "fade-in": "fadeIn 0.5s ease-in-out",
         "slide-up": "slideUp 0.5s ease-out",
         "pop-in": "popIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+        "gradient-xy": "gradient-xy 15s ease infinite",
+        "spin-slow": "spin 10s linear infinite",
+        pulse: "pulse 2s infinite",
       },
       backgroundImage: {
         "gradient-sky": "linear-gradient(to bottom, #2D1E5F, #FFA500)",
       },
       keyframes: {
+        "gradient-xy": {
+          "0%": {
+            backgroundPosition: "0% 50%",
+          },
+          "50%": {
+            backgroundPosition: "100% 50%",
+          },
+          "100%": {
+            backgroundPosition: "0% 50%",
+          },
+        },
         borderAnimation: {
           "0%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },

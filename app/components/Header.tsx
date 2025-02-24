@@ -18,8 +18,11 @@ export default function Header() {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Events", path: "/events" },
-    { name: "Gallery", path: "/gallery" },
+    { name: "Social", path: "/social" },
+    { name: "Archive", path: "/archive" },
+    { name: "Team", path: "/team" },
     { name: "Contact", path: "/contact" },
+    { name: "Merchandise", path: "/merchandise" },
   ];
 
   return (

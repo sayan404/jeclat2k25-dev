@@ -1,173 +1,171 @@
 "use client";
 
+import { useState } from "react";
+import Header from "../components/Header";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import Header from "@/app/components/Header";
+import StarField from "@/components/ui/StarField";
 
-const ContactPage = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
+export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Handle form submission
+    console.log(formData);
+  };
 
   return (
-    <main className="min-h-screen relative font-mono overflow-hidden bg-[#1a0b2e] max-h-[100vh] max-w-[100vw]">
-      {/* <Header /> */}
+    <div className="bg-[#0a0a0f] min-h-screen relative overflow-hidden">
+      <StarField />
+      <Header />
+      <div className="relative text-white py-20 px-4">
+        {/* Background gradient effects */}
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 via-transparent to-transparent opacity-40" />
 
-      {/* Animated Background with particles effect */}
-      <motion.div
-        className="absolute inset-0 z-0"
-        animate={{
-          background: [
-            "linear-gradient(45deg, rgba(26,11,46,0.95), rgba(72,28,135,0.95))",
-            "linear-gradient(45deg, rgba(72,28,135,0.95), rgba(26,11,46,0.95))",
-          ],
-        }}
-        transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
-      />
-
-      {/* Content Container */}
-      <div className="container mx-auto px-4 pt-12 text-center relative z-10">
-        {/* Coming Soon Text with enhanced animation */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-12"
-        >
+        <div className="max-w-6xl mx-auto relative">
+          {/* Header Section */}
           <motion.div
-            animate={{
-              textShadow: [
-                "0 0 20px rgba(255,215,0,0.3)",
-                "0 0 40px rgba(255,215,0,0.5)",
-                "0 0 20px rgba(255,215,0,0.3)",
-              ],
-            }}
-            transition={{ duration: 2, repeat: Infinity }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            <h1 className="text-5xl md:text-8xl font-bold bg-gradient-to-r from-[#FFD700] via-[#FFA500] to-[#FFD700] bg-clip-text text-transparent mb-4 tracking-tight">
-              Coming Soon
+            <h1 className="text-5xl md:text-6xl font-bold mb-3 tracking-tight">
+              Get in{" "}
+              <span className="bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent">
+                touch
+              </span>
             </h1>
-          </motion.div>
-          <motion.p
-            className="text-xl md:text-xl text-cyan-300/90 font-light tracking-wide"
-            animate={{ opacity: [0.7, 1, 0.7] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            We're crafting something extraordinary
-          </motion.p>
-        </motion.div>
-
-        {/* Animated Center Icon with enhanced effects */}
-        <motion.div
-          className="relative mb-10"
-          animate={{
-            scale: [1, 1.05, 1],
-            rotate: [0, 3, -3, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-        >
-          <motion.div
-            className="absolute inset-0 blur-3xl"
-            animate={{
-              opacity: [0.2, 0.4, 0.2],
-              scale: [0.8, 1.1, 0.8],
-            }}
-            transition={{ duration: 4, repeat: Infinity }}
-          >
-            <Image
-              src="/assets/pic_6.svg"
-              alt="Glow Effect"
-              width={170}
-              height={170}
-              className="mx-auto"
-            />
-          </motion.div>
-          <Image
-            src="/assets/pic_6.svg"
-            alt="About Icon"
-            width={170}
-            height={170}
-            className="mx-auto relative z-10 drop-shadow-[0_0_25px_rgba(0,255,255,0.5)]"
-          />
-        </motion.div>
-
-        {/* Feature Preview with glass morphism */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="max-w-3xl mx-auto backdrop-blur-xl bg-purple-900/10 p-4 rounded-2xl border border-purple-500/30"
-        >
-          <motion.div
-            animate={{
-              boxShadow: [
-                "0 0 30px rgba(0,255,255,0.2)",
-                "0 0 60px rgba(0,255,255,0.4)",
-                "0 0 30px rgba(0,255,255,0.2)",
-              ],
-            }}
-            transition={{ duration: 3, repeat: Infinity }}
-            className="rounded-xl p-8 bg-gradient-to-br from-purple-900/50 to-indigo-900/50"
-          >
-            <h2 className="text-xl text-[#FFD700] font-bold mb-6 tracking-wide">
-              Get Ready to Experience
-            </h2>
-            <p className="text-[15px] text-gray-300 mb-6 leading-relaxed">
-              The story of JECLAT - "The Queen of All Fests" - is about to
-              unfold
+            <p className="text-gray-400 text-sm md:text-base">
+              Reach out, and let's create something great!
             </p>
-            <div className="text-lg text-cyan-400/90 font-medium tracking-wide">
-              Stay tuned for updates
-            </div>
           </motion.div>
-        </motion.div>
 
-        {/* Enhanced Notification Form */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="mt-16"
-        >
-          <p className="text-xl text-cyan-300/90 mb-6 tracking-wide">
-            Want to be notified when we launch?
-          </p>
-          <button className="group relative overflow-hidden px-12 py-5 bg-transparent rounded-lg">
-            <span
-              className="absolute inset-0 w-full h-full transition-all duration-300 
-              bg-gradient-to-r from-purple-900/50 to-indigo-900/50 group-hover:opacity-0"
-            />
-            <span
-              className="absolute inset-0 w-3 bg-gradient-to-r from-[#FFD700] via-[#FFA500] to-[#FFD700]
-              transition-all duration-500 ease-out group-hover:w-full"
-            />
-            <span
-              className="relative text-white group-hover:text-[#1a0b2e] 
-              transition-colors duration-300 text-xl font-bold tracking-wider uppercase"
+          {/* Main Content */}
+          <div className="grid md:grid-cols-2 gap-8 items-stretch">
+            {/* Contact Form */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-[#12121a] rounded-xl p-8 shadow-xl backdrop-blur-sm border border-white/5 flex flex-col"
             >
-              Notify Me
-            </span>
-          </button>
-        </motion.div>*/}
-      </div> 
+              <div className="mb-8">
+                <h2 className="text-2xl font-bold mb-3">
+                  Let's connect constellations
+                </h2>
+                <p className="text-gray-400 text-sm">
+                  Let's align our constellations! Reach out and let the magic of
+                  collaboration illuminate our skies.
+                </p>
+              </div>
 
-      {/* Decorative Elements */}
-      {/* <div className="absolute bottom-0 left-0 w-full h-px">
-        <motion.div
-          className="h-px bg-gradient-to-r from-transparent via-[#FFD700]/30 to-transparent"
-          animate={{ opacity: [0.3, 0.6, 0.3] }}
-          transition={{ duration: 3, repeat: Infinity }}
-        />
-      </div> */}
-    </main>
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-5 flex-grow flex flex-col"
+              >
+                <div className="grid md:grid-cols-2 gap-5">
+                  <input
+                    type="text"
+                    placeholder="Last Name"
+                    className="bg-[#1c1c24] rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300 border border-white/5"
+                    value={formData.lastName}
+                    onChange={(e) =>
+                      setFormData({ ...formData, lastName: e.target.value })
+                    }
+                  />
+                  <input
+                    type="text"
+                    placeholder="First Name"
+                    className="bg-[#1c1c24] rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300 border border-white/5"
+                    value={formData.firstName}
+                    onChange={(e) =>
+                      setFormData({ ...formData, firstName: e.target.value })
+                    }
+                  />
+                </div>
+
+                <input
+                  type="email"
+                  placeholder="Email"
+                  className="bg-[#1c1c24] rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300 border border-white/5"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                />
+
+                <input
+                  type="tel"
+                  placeholder="Phone Number"
+                  className="bg-[#1c1c24] rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300 border border-white/5"
+                  value={formData.phone}
+                  onChange={(e) =>
+                    setFormData({ ...formData, phone: e.target.value })
+                  }
+                />
+
+                <textarea
+                  placeholder="Message"
+                  rows={6}
+                  className="bg-[#1c1c24] rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300 border border-white/5 resize-none flex-grow"
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
+                />
+
+                <button
+                  type="submit"
+                  className="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center gap-2 mt-auto"
+                >
+                  Send it to the moon
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </form>
+            </motion.div>
+
+            {/* Image Section */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-[#12121a] rounded-xl p-8 relative overflow-hidden flex flex-col h-full shadow-xl backdrop-blur-sm border border-white/5"
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-transparent" />
+              <div className="flex-grow flex flex-col justify-center">
+                <img
+                  src="/assets/contact.svg"
+                  alt="Astronaut floating in space"
+                  className="w-full h-auto relative z-10"
+                />
+              </div>
+              <div className="mt-8 relative z-10">
+                <p className="text-gray-400 italic text-sm">
+                  "Traveling through time isn't about changing the past—it's
+                  about realizing how infinite the present truly is"
+                </p>
+                <p className="text-gray-500 mt-2 text-sm">-Alan Lightman</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-};
-
-export default ContactPage;
+}
