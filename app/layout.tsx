@@ -7,9 +7,13 @@ import {
   Poppins,
   Press_Start_2P,
   Cedarville_Cursive,
+  Playfair_Display,
+  Orbitron,
+  Rajdhani,
+  Audiowide,
 } from "next/font/google";
 import "./globals.css";
-import './styles/stars.css'
+import "./styles/stars.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,6 +52,28 @@ const doto = Doto({
   weight: ["400", "700", "500", "900"], // Specify the weights you need
 });
 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
+
+const orbitron = Orbitron({
+  variable: "--font-orbitron",
+  subsets: ["latin"],
+});
+
+const rajdhani = Rajdhani({
+  variable: "--font-rajdhani",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
+
+const audiowide = Audiowide({
+  variable: "--font-audiowide",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
 export const metadata: Metadata = {
   title: "JECLAT-2K25",
   description: `JECLAT, also known as 'The Queen of All Fests' is the biggest cultural
@@ -82,12 +108,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${doto.variable} ${geistNoto.variable} ${getPoppins.variable} ${pressStart2P.variable} ${cedarvilleCursive.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} ${doto.variable} ${geistNoto.variable} ${getPoppins.variable} ${pressStart2P.variable} ${cedarvilleCursive.variable} ${playfair.variable} ${orbitron.variable} ${rajdhani.variable} ${audiowide.variable} antialiased`}
+    >
+      <body>{children}</body>
     </html>
   );
 }

@@ -14,10 +14,38 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [status, setStatus] = useState<
+    "idle" | "submitting" | "success" | "error"
+  >("idle");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log(formData);
+    setStatus("submitting");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
   };
 
   return (
@@ -57,9 +85,7 @@ export default function ContactPage() {
               className="bg-[#12121a] rounded-xl p-8 shadow-xl backdrop-blur-sm border border-white/5 flex flex-col"
             >
               <div className="mb-8">
-                <h2 className="text-2xl font-bold mb-3">
-                  Let's connect constellations
-                </h2>
+                <h2 className="text-2xl font-bold mb-3">Let's connect</h2>
                 <p className="text-gray-400 text-sm">
                   Let's align our constellations! Reach out and let the magic of
                   collaboration illuminate our skies.
@@ -123,19 +149,26 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center gap-2 mt-auto"
+                  disabled={status === "submitting"}
+                  className="w-full bg-purple-600 hover:bg-purple-700 text-white font-medium py-3 px-4 rounded-lg transition duration-300 flex items-center justify-center gap-2 mt-auto disabled:opacity-50"
                 >
-                  Send it to the moon
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
+                  {status === "submitting" ? (
+                    "Sending..."
+                  ) : (
+                    <>
+                      Send it to the moon
+                      <svg
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                      >
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                      </svg>
+                    </>
+                  )}
                 </button>
               </form>
             </motion.div>

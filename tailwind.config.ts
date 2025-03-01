@@ -1,15 +1,14 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
+import type { Config } from "tailwindcss";
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config: Config = {
   content: [
-    "./app/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: ["class", "class"],
@@ -17,9 +16,10 @@ module.exports = {
     extend: {
       fontFamily: {
         display: ["Space Grotesk", "Inter", "system-ui", "sans-serif"],
+        playfair: ["var(--font-playfair)"],
         heading: ["Outfit", "Inter", "system-ui", "sans-serif"],
         title: ["Cabinet Grotesk", "Inter", "system-ui", "sans-serif"],
-        astral: ["astral-studio", "sans-serif"],    
+        astral: ["astral-studio", "sans-serif"],
         body: ["Inter", "system-ui", "sans-serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
         mono: ["Geist Mono", "monospace"],
@@ -33,6 +33,16 @@ module.exports = {
         cal: ["Cal Sans", "Inter", "sans-serif"],
         space: ["Space Grotesk", "sans-serif"],
         outfit: ["Outfit", "sans-serif"],
+        orbitron: ["var(--font-orbitron)"],
+        rajdhani: ["var(--font-rajdhani)"],
+        audiowide: ["var(--font-audiowide)"],
+        sugarPeachy: ["Sugar-Peachy", "sans-serif"],
+        amazingQuirky: ["AmazingQuirky", "sans-serif"],
+        astralSisters: ["Astal Sisters", "sans-serif"],
+        comicaBoom: ["Comica-Boom", "sans-serif"],
+        highbright: ["Highbright", "sans-serif"],
+        lightningScript: ["Lightning Script", "sans-serif"],
+        witchMystery: ["Witch Mystery", "sans-serif"],
       },
       fontSize: {
         // Custom font sizes for better typography
@@ -190,3 +200,5 @@ function addVariablesForColors({ addBase, theme }: any) {
     ":root": newVars,
   });
 }
+
+export default config;

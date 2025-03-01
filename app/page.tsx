@@ -191,12 +191,12 @@ const Countdown = () => {
   }, []);
 
   return (
-    <div className="relative text-center mt-4 ">
+    <div className="relative text-center mt-2 md:mt-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative inline-flex gap-6 p-6 rounded-[15px]
+        className="relative inline-flex font-astralSisters gap-1 sm:gap-2 md:gap-6 p-2 sm:p-3 md:p-6 rounded-[15px]
           backdrop-blur-[15px] border-2 border-cyan-400/20
           shadow-[0_8px_32px_rgba(31,_41,_55,_0.5)]
           hover:shadow-[0_8px_32px_rgba(0,255,255,0.2)]
@@ -208,14 +208,18 @@ const Countdown = () => {
           { label: "MINS", value: timeLeft.minutes },
           { label: "SECS", value: timeLeft.seconds },
         ].map((item, index) => (
-          <div key={item.label} className="flex flex-col items-center">
+          <div
+            key={item.label}
+            className="flex flex-col items-center w-[60px] sm:min-w-[40px] md:min-w-[50px]"
+          >
             <motion.div
-              className="p-3 px-7 flex items-center justify-center overflow-hidden
+              className="1 sm:p-2 md:p-3 px-2 sm:px-3 md:px-7 flex items-center justify-center overflow-hidden
                 bg-black/40 rounded-[10px] border-2 border-cyan-400/20
-                text-[15px] font-bold text-cyan-300 
+                text-[10px] sm:text-[12px] md:text-[15px] font-bold text-cyan-300 
                 shadow-[0_4px_12px_rgba(0,255,255,0.1)]
                 hover:shadow-[0_4px_16px_rgba(0,255,255,0.2)]
-                transition-all duration-300"
+                transition-all duration-300
+                w-full"
             >
               <AnimatePresence mode="popLayout">
                 <motion.span
@@ -237,7 +241,10 @@ const Countdown = () => {
                 {String(item.value).padStart(2, "0")}
               </span>
             </motion.div>
-            <span className="text-[12px] font-medium text-cyan-400/90 mt-2 tracking-widest">
+            <span
+              className="text-[8px] sm:text-[10px] md:text-[12px] font-medium text-cyan-400/90 
+              mt-1 md:mt-2 tracking-widest"
+            >
               {item.label}
             </span>
           </div>
@@ -273,7 +280,7 @@ const AnimatedCards = ({
 
   return (
     <motion.div
-      className="flex flex-wrap justify-center mt-12 space-x-4 space-y-4 md:space-y-0"
+      className="flex flex-wrap max-w-[80vw] justify-center gap-2 mt-8 px-2 md:mt-12 md:gap-4 md:max-w-[90vw]"
       variants={container}
       initial="hidden"
       animate="show"
@@ -288,16 +295,16 @@ const AnimatedCards = ({
             boxShadow: "0px 0px 20px rgba(0, 255, 255, 0.8)",
           }}
           transition={{ type: "spring", stiffness: 100 }}
-          className="relative flex flex-col items-center text-center group z-50 py-5
+          className="relative flex flex-col items-center text-center group z-50 py-3 px-2
             border-2 border-cyan-400 backdrop-blur-xl rounded-2xl 
             hover:shadow-xl transition-all duration-300 
-            w-25 md:w-40"
+            w-[calc(33%-8px)] min-w-[90px] md:w-40 md:py-5"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-indigo-500 to-pink-500 opacity-10 rounded-2xl pointer-events-none" />
-          <div className="relative w-12 h-12 md:w-16 md:h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+          <div className="relative w-8 h-8 md:w-16 md:h-16 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
             {link.icon}
           </div>
-          <span className="mt-3 text-[10px] md:text-xs uppercase text-cyan-400 font-bold group-hover:underline">
+          <span className=" font-astralSisters mt-2 text-[8px] md:text-xs uppercase text-cyan-400 font-bold group-hover:underline">
             {link.text}
           </span>
         </motion.a>
@@ -559,30 +566,45 @@ const TimeTravelLanding = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="absolute top-10 left-10 z-50"
+        className="absolute top-4 left-4 md:top-10 md:left-10 z-50"
       >
         <Image
           src="/logo.png"
           alt="Jeclat Logo"
           width={130}
           height={130}
-          className="drop-shadow-[0_0_15px_rgba(0,255,255,0.5)] hover:scale-110 transition-transform duration-300"
+          className="w-24 sm:w-[70%] drop-shadow-[0_0_15px_rgba(0,255,255,0.5)] 
+            hover:scale-110 transition-transform duration-300"
         />
       </motion.div>
 
-      <div className="absolute inset-0 m-5 border-4 border-cyan-400 pointer-events-none backdrop-blur-[10px] rounded-[20px]" />
-      <div className="m-4">
+      <div
+        className="absolute inset-0 mx-2 my-4 md:m-5 border-4 border-cyan-400 
+        pointer-events-none backdrop-blur-[10px] rounded-[20px]"
+      />
+      <div className="m-2 md:m-4">
         {/* Top Left Corner Border */}
-        <div className="absolute top-0 left-0 w-[300px] h-[300px] border-t-4 border-l-4 border-cyan-400 rounded-[20px] rounded-tr-sm rounded-bl-sm"></div>
+        <div
+          className="absolute top-0 left-0 w-[150px] h-[150px] md:w-[300px] md:h-[300px] 
+          border-t-4 border-l-4 border-cyan-400 rounded-[20px] rounded-tr-sm rounded-bl-sm"
+        ></div>
 
         {/* Top Right Corner Border */}
-        <div className="absolute top-0 right-0 w-[300px] h-[300px] border-t-4 border-r-4 border-cyan-400 rounded-[20px] rounded-tl-sm rounded-br-sm"></div>
+        <div
+          className="absolute top-0 right-0 w-[150px] h-[150px] md:w-[300px] md:h-[300px] 
+          border-t-4 border-r-4 border-cyan-400 rounded-[20px] rounded-tl-sm rounded-br-sm"
+        ></div>
 
         {/* Bottom Left Corner Border */}
-        <div className="absolute bottom-0 left-0 w-[300px] h-[300px] border-b-4 border-l-4 border-cyan-400 rounded-[20px] rounded-tl-sm rounded-br-sm"></div>
+        <div
+          className="absolute bottom-0 left-0 w-[150px] h-[150px] md:w-[300px] md:h-[300px] 
+          border-b-4 border-l-4 border-cyan-400 rounded-[20px] rounded-tl-sm rounded-br-sm"
+        ></div>
 
-        {/* Bottom Right Corner Border */}
-        <div className="absolute bottom-0 right-0 w-[300px] h-[300px] border-b-4 border-r-4 border-cyan-400 rounded-[20px] rounded-bl-sm rounded-tr-sm"></div>
+        <div
+          className="absolute bottom-0 right-0 w-[150px] h-[150px] md:w-[300px] md:h-[300px] 
+          border-b-4 border-r-4 border-cyan-400 rounded-[20px] rounded-bl-sm rounded-tr-sm"
+        ></div>
       </div>
       <div className="text-center">
         <motion.h1
@@ -591,8 +613,8 @@ const TimeTravelLanding = () => {
           transition={{ duration: 2, repeat: Infinity }}
         >
           {Array.from("JECLAT 2K25").map((letter, index) => (
-            <motion.span
-              className="font-astral"
+            <motion.span 
+              className="font-astral tracking-tight md:tracking-wide"
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -611,13 +633,18 @@ const TimeTravelLanding = () => {
       </div>
       <Countdown />
       <AnimatedCards links={links} />
-      <div className="relative text-center mt-8">
-        <div className="relative font-astral text-[8px] cursor-move md:text-xl font-semibold text-cyan-400 px-6 py-3 border-4 border-cyan-400 rounded-lg glow-on-hover">
+      <div className="relative text-center mt-4">
+        <div className="relative font-astral text-[10px] md:text-xl font-semibold text-cyan-400 px-4 md:px-6 py-2 md:py-3 border-2 md:border-4 border-cyan-400 rounded-lg glow-on-hover">
           Jeclat is on
         </div>
       </div>
-      <footer className="absolute bottom-8 w-full text-center text-cyan-400 text-[6px]">
-        <p>Copyright reserved at Jeclat 2025</p>
+      <footer
+        className="absolute bottom-0 md:bottom-8 w-full text-center text-cyan-400 
+        text-[4px] md:text-[5px] px-2"
+      >
+        <p className="bg-black/50 inline-block px-2 py-1 rounded-full backdrop-blur-sm">
+          Copyright reserved at Jeclat 2025
+        </p>
       </footer>
     </div>
   );

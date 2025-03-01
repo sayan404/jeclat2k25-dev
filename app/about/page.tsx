@@ -63,8 +63,8 @@ const sponsors = [
   { src: "/sponsers/zebronics.png", alt: "Zebronics", type: "image" },
 ];
 
-console.log(sponsors);
-
+// console.log(sponsors);
+// 
 export default function AboutPage() {
   return (
     <div className="relative lg:overflow-hidden">

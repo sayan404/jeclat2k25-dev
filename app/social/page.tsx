@@ -212,6 +212,7 @@ export default function SocialPage() {
 
       {/* Filters */}
       <div className="container mx-auto px-4 py-6 pt-24 opacity-90">
+        <h1 className= "text-4xl font-highbright text-center mb-2 text-orange-yellow" >Social Night</h1>
         <div className="flex flex-col justify-center items-center gap-6 mb-12">
           {/* Year Filter */}
           <div className="flex flex-col gap-3">
@@ -221,7 +222,7 @@ export default function SocialPage() {
                 onClick={() => setSelectedYear("all")}
                 className={`px-6 py-2 rounded-full transition-all duration-300 ${
                   selectedYear === "all"
-                    ? "bg-purple-600 text-white"
+                    ? "bg-gradient-to-r from-white to-blue-400 text-black"
                     : "bg-gray-800 text-gray-400 hover:bg-gray-700"
                 }`}
               >
@@ -233,7 +234,7 @@ export default function SocialPage() {
                   onClick={() => setSelectedYear(year)}
                   className={`px-6 py-2 rounded-full transition-all duration-300 ${
                     selectedYear === year
-                      ? "bg-purple-600 text-white"
+                      ? "bg-gradient-to-r from-white to-blue-400 text-black"
                       : "bg-gray-800 text-gray-400 hover:bg-gray-700"
                   }`}
                 >

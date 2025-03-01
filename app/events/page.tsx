@@ -8,169 +8,314 @@ import EventCard from "../components/EventCard";
 import CategoryFilter from "../components/CategoryFilter";
 
 const events = [
+  // Day 1
   {
     id: 1,
-    title: "Summer Music Festival",
+    title: "Inauguration",
     image: "https://picsum.photos/204/204",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    date: "2024-05-15",
-    category: "Music",
+    description: "Opening ceremony of JECLAT 2025",
+    date: "2025-03-31",
+    time: "6:00 PM - 6:30 PM",
+    venue: "Old Auditorium",
+    category: "Day 1",
   },
   {
     id: 2,
-    title: "Tech Conference",
+    title: "Cultural Performance",
     image: "https://picsum.photos/204/204",
-    description:
-      "Exploring the latest in technology and innovation. Exploring the latest in technology and innovation. Exploring the latest in technology and innovation",
-    date: "2024-05-15",
-    category: "Technology",
+    description: "Cultural performances and celebrations",
+    date: "2025-03-31",
+    time: "6:30 PM - 8:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 1",
   },
   {
     id: 3,
-    title: "Food & Wine Expo",
+    title: "Jyoti's Performance",
     image: "https://picsum.photos/204/204",
-    description:
-      "Taste the finest cuisines and wines from around the world. Taste the finest cuisines and wines from around the world. Taste the finest cuisines and wines from around the world",
-    date: "2024-05-15",
-    category: "Food & Wine",
+    description: "Special performance by Jyoti",
+    date: "2025-03-31",
+    time: "8:00 PM - 9:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 1",
   },
   {
-    id: 1,
-    title: "Summer Music Festival",
+    id: 4,
+    title: "Roadies Interview",
     image: "https://picsum.photos/204/204",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    date: "2024-05-15",
-    category: "Music",
+    description: "Interview session for Roadies",
+    date: "2025-03-31",
+    time: "9:00 PM - 10:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 1",
+  },
+  // Day 2
+  {
+    id: 5,
+    title: "T-Shirt Painting",
+    image: "https://picsum.photos/204/204",
+    description: "Creative t-shirt painting competition",
+    date: "2025-04-01",
+    time: "11:00 AM - 3:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 2",
   },
   {
-    id: 2,
-    title: "Tech Conference",
+    id: 6,
+    title: "Mock Auction Prelims",
     image: "https://picsum.photos/204/204",
-    description:
-      "Exploring the latest in technology and innovation. Exploring the latest in technology and innovation. Exploring the latest in technology and innovation",
-    date: "2024-05-15",
-    category: "Technology",
+    description: "Preliminary rounds of Mock Auction",
+    date: "2025-04-01",
+    time: "4:00 PM - 5:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 2",
   },
   {
-    id: 3,
-    title: "Food & Wine Expo",
+    id: 7,
+    title: "Malle Prelims",
     image: "https://picsum.photos/204/204",
-    description:
-      "Taste the finest cuisines and wines from around the world. Taste the finest cuisines and wines from around the world. Taste the finest cuisines and wines from around the world",
-    date: "2024-05-15",
-    category: "Food & Wine",
+    description: "Preliminary rounds of Malle",
+    date: "2025-04-01",
+    time: "5:00 PM - 6:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 2",
   },
   {
-    id: 1,
-    title: "Summer Music Festival",
+    id: 8,
+    title: "Treasure Hunt Prelims",
     image: "https://picsum.photos/204/204",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    date: "2024-05-15",
-    category: "Music",
+    description: "Preliminary rounds of Treasure Hunt",
+    date: "2025-04-01",
+    time: "6:00 PM - 7:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 2",
   },
   {
-    id: 2,
-    title: "Tech Conference",
+    id: 9,
+    title: "Made For Each Other",
     image: "https://picsum.photos/204/204",
-    description:
-      "Exploring the latest in technology and innovation. Exploring the latest in technology and innovation. Exploring the latest in technology and innovation",
-    date: "2024-05-15",
-    category: "Technology",
+    description: "Couple competition event",
+    date: "2025-04-01",
+    time: "7:00 PM - 8:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 2",
   },
   {
-    id: 3,
-    title: "Food & Wine Expo",
+    id: 10,
+    title: "CS-GO",
     image: "https://picsum.photos/204/204",
-    description:
-      "Taste the finest cuisines and wines from around the world. Taste the finest cuisines and wines from around the world. Taste the finest cuisines and wines from around the world",
-    date: "2024-05-15",
-    category: "Food & Wine",
+    description: "Counter-Strike: Global Offensive tournament",
+    date: "2025-04-01",
+    time: "8:00 PM - 9:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 2",
   },
   {
-    id: 1,
-    title: "Summer Music Festival",
+    id: 11,
+    title: "Mock Auction Final",
     image: "https://picsum.photos/204/204",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    date: "2024-05-15",
-    category: "Music",
+    description: "Final round of Mock Auction",
+    date: "2025-04-01",
+    time: "9:00 PM - 10:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 2",
+  },
+  // Day 3
+  {
+    id: 12,
+    title: "Wall Painting",
+    image: "https://picsum.photos/204/204",
+    description: "Creative wall painting competition",
+    date: "2025-04-02",
+    time: "10:00 AM - 3:00 PM",
+    venue: "Campus",
+    category: "Day 3",
   },
   {
-    id: 2,
-    title: "Tech Conference",
+    id: 13,
+    title: "Antakshari Prelims",
     image: "https://picsum.photos/204/204",
-    description:
-      "Exploring the latest in technology and innovation. Exploring the latest in technology and innovation. Exploring the latest in technology and innovation",
-    date: "2024-05-15",
-    category: "Technology",
+    description: "Preliminary rounds of Antakshari",
+    date: "2025-04-02",
+    time: "3:30 PM - 4:30 PM",
+    venue: "Old Auditorium",
+    category: "Day 3",
+  },
+  // Continue with remaining Day 3 events
+  {
+    id: 14,
+    title: "Pen Your Love",
+    image: "https://picsum.photos/204/204",
+    description: "Creative writing competition",
+    date: "2025-04-02",
+    time: "4:30 PM - 5:30 PM",
+    venue: "Old Auditorium",
+    category: "Day 3",
   },
   {
-    id: 3,
-    title: "Food & Wine Expo",
+    id: 15,
+    title: "Quiz",
     image: "https://picsum.photos/204/204",
-    description:
-      "Taste the finest cuisines and wines from around the world. Taste the finest cuisines and wines from around the world. Taste the finest cuisines and wines from around the world",
-    date: "2024-05-15",
-    category: "Food & Wine",
+    description: "General knowledge quiz competition",
+    date: "2025-04-02",
+    time: "6:00 PM - 7:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 3",
   },
   {
-    id: 1,
-    title: "Summer Music Festival",
+    id: 16,
+    title: "Band Blast",
     image: "https://picsum.photos/204/204",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    date: "2024-05-15",
-    category: "Music",
+    description: "Live band performance competition",
+    date: "2025-04-02",
+    time: "7:00 PM - 8:30 PM",
+    venue: "Old Auditorium",
+    category: "Day 3",
   },
   {
-    id: 2,
-    title: "Tech Conference",
+    id: 17,
+    title: "Fashion Show",
     image: "https://picsum.photos/204/204",
-    description:
-      "Exploring the latest in technology and innovation. Exploring the latest in technology and innovation. Exploring the latest in technology and innovation",
-    date: "2024-05-15",
-    category: "Technology",
+    description: "Glamorous fashion show event",
+    date: "2025-04-02",
+    time: "8:30 PM - 10:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 3",
+  },
+  // Day 4
+  {
+    id: 18,
+    title: "Treasure Hunt",
+    image: "https://picsum.photos/204/204",
+    description: "Campus-wide treasure hunt competition",
+    date: "2025-04-03",
+    time: "11:00 AM - 4:00 PM",
+    venue: "Campus",
+    category: "Day 4",
   },
   {
-    id: 3,
-    title: "Food & Wine Expo",
+    id: 19,
+    title: "Roadies",
     image: "https://picsum.photos/204/204",
-    description:
-      "Taste the finest cuisines and wines from around the world. Taste the finest cuisines and wines from around the world. Taste the finest cuisines and wines from around the world",
-    date: "2024-05-15",
-    category: "Food & Wine",
+    description: "Adventure and challenge based competition",
+    date: "2025-04-03",
+    time: "11:00 AM - 4:00 PM",
+    venue: "Campus",
+    category: "Day 4",
   },
   {
-    id: 1,
-    title: "Summer Music Festival",
+    id: 20,
+    title: "Malle Final",
     image: "https://picsum.photos/204/204",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    date: "2024-05-15",
-    category: "Music",
+    description: "Final round of Malle competition",
+    date: "2025-04-03",
+    time: "5:00 PM - 6:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 4",
   },
   {
-    id: 2,
-    title: "Tech Conference",
+    id: 21,
+    title: "Antakshari Final",
     image: "https://picsum.photos/204/204",
-    description:
-      "Exploring the latest in technology and innovation. Exploring the latest in technology and innovation. Exploring the latest in technology and innovation",
-    date: "2024-05-15",
-    category: "Technology",
+    description: "Final round of Antakshari",
+    date: "2025-04-03",
+    time: "6:00 PM - 7:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 4",
   },
   {
-    id: 3,
-    title: "Food & Wine Expo",
+    id: 22,
+    title: "J-Factor",
     image: "https://picsum.photos/204/204",
-    description:
-      "Taste the finest cuisines and wines from around the world. Taste the finest cuisines and wines from around the world. Taste the finest cuisines and wines from around the world",
-    date: "2024-05-15",
-    category: "Food & Wine",
+    description: "Talent showcase competition",
+    date: "2025-04-03",
+    time: "7:00 PM - 9:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 4",
   },
-  // Add more events as needed
+  {
+    id: 23,
+    title: "Prom Night",
+    image: "https://picsum.photos/204/204",
+    description: "Formal dance and social gathering",
+    date: "2025-04-03",
+    time: "9:00 PM - 10:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 4",
+  },
+  // Day 5
+  {
+    id: 24,
+    title: "Treasure Hunt",
+    image: "https://picsum.photos/204/204",
+    description: "Final day of treasure hunt",
+    date: "2025-04-04",
+    time: "11:00 AM - 4:00 PM",
+    venue: "Campus",
+    category: "Day 5",
+  },
+  {
+    id: 25,
+    title: "Roadies Final Event",
+    image: "https://picsum.photos/204/204",
+    description: "Final round of Roadies competition",
+    date: "2025-04-04",
+    time: "5:00 PM - 6:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 5",
+  },
+  {
+    id: 26,
+    title: "Drama",
+    image: "https://picsum.photos/204/204",
+    description: "Theatrical performance competition",
+    date: "2025-04-04",
+    time: "6:30 PM - 8:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 5",
+  },
+  {
+    id: 27,
+    title: "Wavezz Night",
+    image: "https://picsum.photos/204/204",
+    description: "Musical night celebration",
+    date: "2025-04-04",
+    time: "8:00 PM - 10:00 PM",
+    venue: "Old Auditorium",
+    category: "Day 5",
+  },
+  // Day 6
+  {
+    id: 28,
+    title: "Reunion",
+    image: "https://picsum.photos/204/204",
+    description: "Alumni reunion event",
+    date: "2025-04-05",
+    time: "11:00 AM - 5:00 PM",
+    venue: "Oval",
+    category: "Day 6",
+  },
+  {
+    id: 29,
+    title: "Calliphony Night",
+    image: "https://picsum.photos/204/204",
+    description: "Musical performance night",
+    date: "2025-04-05",
+    time: "6:00 PM - 10:00 PM",
+    venue: "Oval",
+    category: "Day 6",
+  },
+  // Day 7
+  {
+    id: 30,
+    title: "Social Night",
+    image: "https://picsum.photos/204/204",
+    description: "Final night of celebrations",
+    date: "2025-04-06",
+    time: "6:00 PM - 10:00 PM",
+    venue: "Oval",
+    category: "Day 7",
+  },
 ];
 
 export default function EventsPage() {
@@ -223,17 +368,26 @@ export default function EventsPage() {
       </div>
 
       {/* Content */}
-        <Header />
+      <Header />
       <div className="relative z-20 flex justify-center items-center mt-10">
-
         <div className="flex flex-col justify-center items-center min-h-screen w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
+          <div className="text-center mb-8">
+            <p className="text-white text-4xl font-highbright font-bold mb-1 space-x-4">
+              <span className="text-orange-yellow">Events</span>
+            </p>
+            <div className="space-y-1">
+              <h2 className="text-transparent bg-clip-text bg-white font-sugarPeachy text-xl  tracking-wider">
+                It&apos;s time to showcase your creative calibre
+              </h2>
+            </div>
+          </div>
           <CategoryFilter
             categories={categories}
             selectedCategory={selectedCategory}
             onCategoryChange={handleCategoryChange}
           />
 
-          <div className="relative w-full max-w-7xl">
+          <div className="relative w-full max-w-7xl font-sugarPeachy">
             {/* Carousel Container */}
             <div className="overflow-hidden">
               <div
@@ -257,18 +411,23 @@ export default function EventsPage() {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center mt-6 sm:mt-8 space-x-1">
-            {filteredEvents.map((_, index) => (
-              <button
-                key={index + Math.random() + Date.now()}
-                className={`h-1 sm:h-1.5 w-1 sm:w-5 rounded-full transition-all duration-300 ${
-                  index === currentIndex
-                    ? "bg-white scale-110"
-                    : "bg-gray-700/50"
-                }`}
-                onClick={() => setCurrentIndex(index)}
-              />
-            ))}
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
+              {filteredEvents.map((_, index) => (
+                <button
+                  key={index + Math.random() + Date.now()}
+                  className={`h-2 transition-all duration-300 rounded-full ${
+                    index === currentIndex
+                      ? "w-8 bg-gradient-to-r from-orange-yellow to-blue-400"
+                      : "w-2 bg-white/20 hover:bg-white/40"
+                  }`}
+                  onClick={() => setCurrentIndex(index)}
+                />
+              ))}
+            </div>
+            <p className="font-sugarPeachy text-white/70 text-sm">
+              {currentIndex + 1} / {filteredEvents.length}
+            </p>
           </div>
         </div>
       </div>

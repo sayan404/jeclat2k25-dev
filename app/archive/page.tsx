@@ -34,17 +34,17 @@ const pastEvents: VideoEvent[] = [
     youtubeUrl: "https://www.youtube.com/watch?v=cQc-4M6KWHc",
     thumbnailUrl: "https://img.youtube.com/vi/cQc-4M6KWHc/maxresdefault.jpg",
   },
-  {
-    id: "4",
-    title: "JECLAT 2K20",
-    date: "2021-12-10",
-    youtubeUrl: "https://www.youtube.com/watch?v=qDkEhgVGtBg",
-    thumbnailUrl: "https://img.youtube.com/vi/qDkEhgVGtBg/maxresdefault.jpg",
-  },
+  // {
+  //   id: "4",
+  //   title: "JECLAT 2K20",
+  //   date: "2021-12-10",
+  //   youtubeUrl: "https://www.youtube.com/watch?v=qDkEhgVGtBg",
+  //   thumbnailUrl: "https://img.youtube.com/vi/qDkEhgVGtBg/maxresdefault.jpg",
+  // },
   {
     id: "5",
     title: "JECLAT 2K19",
-    date: "2020-12-10",
+    date: "2019-12-10",
     youtubeUrl: "https://www.youtube.com/watch?v=xEem_LTqRXs",
     thumbnailUrl: "https://img.youtube.com/vi/xEem_LTqRXs/maxresdefault.jpg",
   },
@@ -108,29 +108,30 @@ export default function ArchivePage() {
       <div className="relative z-10">
         <Header />
         <main className="container mx-auto px-4 py-8 pt-24">
-          <div className="text-center mb-12">
-            <h1 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-              Time Capsule Archive
+          <div className="text-center mb-6">
+            <h1 className="text-5xl font-bold font-highbright mb-4 bg-clip-text text-orange-yellow">
+              Archive
             </h1>
-            <p className="text-gray-300 text-lg">
-              Journey through the history of JECLAT
-            </p>
+            {/* <p className=" text-white text-4xl font-highbright font-bold mb-1 space-x-4">
+              <span className="text-md"></span>
+            </p> */}
+            <div className="space-y-1">
+              <h2 className="text-transparent bg-clip-text bg-white font-sugarPeachy text-xl  tracking-wider">
+                Journey through the history of JECLAT
+              </h2>
+            </div>
           </div>
 
-          <div className="mb-12 relative">
+          <div className="mb-6 relative">
             {/* Enhanced mobile dropdown */}
             <div className="md:hidden mb-8">
               <div className="relative">
                 <select
                   value={selectedYear}
                   onChange={(e) => setSelectedYear(e.target.value)}
-                  className="w-full appearance-none bg-gray-800/50 backdrop-blur-sm text-white 
-                    px-6 py-3 rounded-lg border-2 border-purple-500/30 
-                    focus:outline-none focus:border-purple-500 
-                    shadow-[0_0_15px_rgba(168,85,247,0.15)]
-                    transition-all duration-300 hover:border-purple-500/50"
+                  className="w-[100%] appearance-none bg-gray-800/50 backdrop-blur-sm text-white py-2 px-4 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300"
                 >
-                  <option value="all">All Years</option>
+                  <option value="all" className="text-white max-w-[50%]">All Years</option>
                   {years.map((year) => (
                     <option key={year} value={year}>
                       {year}
@@ -138,7 +139,7 @@ export default function ArchivePage() {
                   ))}
                 </select>
                 <div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                  <svg
+                <svg
                     className="w-5 h-5 text-purple-500"
                     fill="none"
                     stroke="currentColor"
@@ -157,25 +158,36 @@ export default function ArchivePage() {
 
             {/* Timeline for medium and larger screens */}
             <div className="hidden md:block relative">
-              <div className="absolute left-0 right-0 h-1 bg-purple-600 top-1/2 transform -translate-y-1/2"></div>
-              <div className="flex justify-between relative">
+              <div className="flex justify-center relative gap-4">
+                <button
+                  onClick={() => setSelectedYear("all")}
+                  className={`
+                    px-6 py-2 rounded-full text-sm
+                    ${
+                      selectedYear === "all"
+                        ? "bg-blue-200 text-black"
+                        : "bg-gray-800 text-white hover:bg-gray-700"
+                    }
+                    transition-all duration-300
+                  `}
+                >
+                  All Years
+                </button>
                 {years.map((year) => (
                   <button
                     key={year}
                     onClick={() => setSelectedYear(year)}
                     className={`
-                      relative z-10 w-12 h-12 rounded-full 
+                      px-6 py-2 rounded-full text-sm
                       ${
                         selectedYear === year
-                          ? "bg-purple-600 border-4 border-purple-300"
-                          : "bg-gray-800 hover:bg-purple-700"
+                          ? "bg-gray-800 text-white"
+                          : "bg-gray-800/50 text-white hover:bg-gray-700"
                       }
-                      transition-all duration-300 transform hover:scale-110
+                      transition-all duration-300
                     `}
                   >
-                    <span className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-sm">
-                      {year}
-                    </span>
+                    {year}
                   </button>
                 ))}
               </div>

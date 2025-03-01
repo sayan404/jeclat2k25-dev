@@ -12,11 +12,52 @@
   --beige: #d9b38c;
 }
 @font-face {
-  font-family: "astral-studio";
+  font-family: "Comica-Boom";
   src: url("./assets/fonts/Comica-Boom.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Sugar-Peachy";
+  src: url("./assets/fonts/Sugar\ Peachy\ Regular.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "AmazingQuirky";
+  src: url("./assets/fonts/Amazing\ Quirky.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Astal Sisters";
+  src: url("./assets/fonts/Astral\ Sisters.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Highbright";
+  src: url("./assets/fonts/Highbright.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Lightning Script";
+  src: url("./assets/fonts/Lightning\ Script.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "astral-studio";
+  src: url("./assets/fonts/Comica-Boom.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif, Doto;
 }
@@ -150,8 +191,8 @@ body {
 
 /* Hide scrollbar for IE, Edge and Firefox on the container */
 .hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 /* Starry Background */

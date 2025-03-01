@@ -15,7 +15,7 @@ const AnimatedCosmicInterface = () => {
           points="400,150 600,250 600,550 400,650 200,550 200,250"
           fill="none"
           stroke="rgba(120, 210, 255, 0.2)"
-          stroke-width="2"
+          strokeWidth="2"
         >
           <animateTransform
             attributeName="transform"
@@ -30,7 +30,7 @@ const AnimatedCosmicInterface = () => {
           points="400,180 570,270 570,530 400,620 230,530 230,270"
           fill="none"
           stroke="rgba(120, 210, 255, 0.15)"
-          stroke-width="1.5"
+          strokeWidth="1.5"
         />
 
         <circle
@@ -39,7 +39,7 @@ const AnimatedCosmicInterface = () => {
           r="200"
           fill="none"
           stroke="rgba(100, 200, 255, 0.2)"
-          stroke-width="1"
+          strokeWidth="1"
         >
           <animate
             attributeName="r"
@@ -54,7 +54,7 @@ const AnimatedCosmicInterface = () => {
           r="150"
           fill="none"
           stroke="rgba(100, 200, 255, 0.3)"
-          stroke-width="1.5"
+          strokeWidth="1.5"
         >
           <animate
             attributeName="r"
@@ -69,7 +69,7 @@ const AnimatedCosmicInterface = () => {
           r="100"
           fill="none"
           stroke="rgba(100, 200, 255, 0.4)"
-          stroke-width="2"
+          strokeWidth="2"
         >
           <animate
             attributeName="r"
@@ -85,7 +85,7 @@ const AnimatedCosmicInterface = () => {
           r="85"
           fill="rgba(30, 40, 80, 0.6)"
           stroke="rgba(120, 210, 255, 0.7)"
-          stroke-width="3"
+          strokeWidth="3"
         >
           <animateTransform
             attributeName="transform"
@@ -102,8 +102,8 @@ const AnimatedCosmicInterface = () => {
           r="80"
           fill="none"
           stroke="rgba(255, 170, 80, 0.7)"
-          stroke-width="5"
-          stroke-dasharray="400 520"
+          strokeWidth="5"
+          strokeDasharray="400 520"
           stroke-linecap="round"
         >
           <animateTransform
@@ -122,7 +122,7 @@ const AnimatedCosmicInterface = () => {
           r="60"
           fill="rgba(40, 70, 110, 0.5)"
           stroke="rgba(100, 200, 255, 0.5)"
-          stroke-width="1.5"
+          strokeWidth="1.5"
         >
           <animateTransform
             attributeName="transform"
@@ -139,7 +139,7 @@ const AnimatedCosmicInterface = () => {
           ry="20"
           fill="none"
           stroke="rgba(100, 200, 255, 0.3)"
-          stroke-width="1"
+          strokeWidth="1"
         >
           <animateTransform
             attributeName="transform"
@@ -202,7 +202,7 @@ const AnimatedCosmicInterface = () => {
           r="20"
           fill="rgba(50, 80, 120, 0.5)"
           stroke="rgba(100, 200, 255, 0.4)"
-          stroke-width="1"
+          strokeWidth="1"
         >
           <animateTransform
             attributeName="transform"
@@ -218,7 +218,7 @@ const AnimatedCosmicInterface = () => {
           r="15"
           fill="rgba(40, 70, 110, 0.5)"
           stroke="rgba(100, 200, 255, 0.4)"
-          stroke-width="1"
+          strokeWidth="1"
         >
           <animateTransform
             attributeName="transform"
@@ -234,7 +234,7 @@ const AnimatedCosmicInterface = () => {
           r="25"
           fill="rgba(40, 60, 100, 0.5)"
           stroke="rgba(100, 200, 255, 0.4)"
-          stroke-width="1"
+          strokeWidth="1"
         >
           <animateTransform
             attributeName="transform"
@@ -250,7 +250,7 @@ const AnimatedCosmicInterface = () => {
           r="18"
           fill="rgba(50, 90, 130, 0.5)"
           stroke="rgba(100, 200, 255, 0.4)"
-          stroke-width="1"
+          strokeWidth="1"
         >
           <animateTransform
             attributeName="transform"
@@ -269,7 +269,7 @@ const AnimatedCosmicInterface = () => {
           rx="10"
           fill="rgba(30, 45, 80, 0.5)"
           stroke="rgba(100, 200, 255, 0.5)"
-          stroke-width="1.5"
+          strokeWidth="1.5"
         >
           <animateTransform
             attributeName="transform"
@@ -287,7 +287,7 @@ const AnimatedCosmicInterface = () => {
           rx="5"
           fill="none"
           stroke="rgba(100, 200, 255, 0.3)"
-          stroke-width="1"
+          strokeWidth="1"
         />
         <path
           d="M370 650 L430 650 L420 570 L380 570 Z"
@@ -324,7 +324,7 @@ const AnimatedCosmicInterface = () => {
           rx="5"
           fill="rgba(40, 70, 110, 0.6)"
           stroke="rgba(100, 200, 255, 0.4)"
-          stroke-width="1"
+          strokeWidth="1"
         >
           <animateTransform
             attributeName="transform"
@@ -340,7 +340,7 @@ const AnimatedCosmicInterface = () => {
           x2="700"
           y2="450"
           stroke="rgba(100, 200, 255, 0.7)"
-          stroke-width="1"
+          strokeWidth="1"
         >
           <animate
             attributeName="opacity"
@@ -355,7 +355,7 @@ const AnimatedCosmicInterface = () => {
           x2="630"
           y2="470"
           stroke="rgba(100, 200, 255, 0.7)"
-          stroke-width="1"
+          strokeWidth="1"
         >
           <animateTransform
             attributeName="transform"
@@ -371,7 +371,7 @@ const AnimatedCosmicInterface = () => {
           x2="670"
           y2="470"
           stroke="rgba(100, 200, 255, 0.7)"
-          stroke-width="1"
+          strokeWidth="1"
         >
           <animateTransform
             attributeName="transform"
@@ -390,7 +390,7 @@ const AnimatedCosmicInterface = () => {
           rx="5"
           fill="rgba(30, 45, 80, 0.5)"
           stroke="rgba(100, 200, 255, 0.5)"
-          stroke-width="1"
+          strokeWidth="1"
         >
           <animateTransform
             attributeName="transform"
@@ -406,7 +406,7 @@ const AnimatedCosmicInterface = () => {
           x2="200"
           y2="410"
           stroke="rgba(100, 220, 255, 0.7)"
-          stroke-width="1"
+          strokeWidth="1"
         />
         <line
           x1="160"
@@ -414,7 +414,7 @@ const AnimatedCosmicInterface = () => {
           x2="190"
           y2="420"
           stroke="rgba(100, 220, 255, 0.6)"
-          stroke-width="1"
+          strokeWidth="1"
         />
         <line
           x1="160"
@@ -422,7 +422,7 @@ const AnimatedCosmicInterface = () => {
           x2="195"
           y2="430"
           stroke="rgba(100, 220, 255, 0.5)"
-          stroke-width="1"
+          strokeWidth="1"
         />
 
         <circle
@@ -431,7 +431,7 @@ const AnimatedCosmicInterface = () => {
           r="45"
           fill="rgba(30, 45, 80, 0.5)"
           stroke="rgba(100, 200, 255, 0.5)"
-          stroke-width="1.5"
+          strokeWidth="1.5"
         >
           <animateTransform
             attributeName="transform"
@@ -455,8 +455,8 @@ const AnimatedCosmicInterface = () => {
           x2="150"
           y2="570"
           stroke="rgba(100, 200, 255, 0.5)"
-          stroke-width="1"
-          stroke-dasharray="2 3"
+          strokeWidth="1"
+          strokeDasharray="2 3"
         />
         <line
           x1="110"
@@ -464,8 +464,8 @@ const AnimatedCosmicInterface = () => {
           x2="190"
           y2="530"
           stroke="rgba(100, 200, 255, 0.5)"
-          stroke-width="1"
-          stroke-dasharray="2 3"
+          strokeWidth="1"
+          strokeDasharray="2 3"
         />
 
         <text
@@ -547,7 +547,7 @@ const AnimatedCosmicInterface = () => {
           ry="150"
           fill="none"
           stroke="rgba(255, 180, 100, 0.2)"
-          stroke-width="1"
+          strokeWidth="1"
           transform="rotate(15 400 400)"
         />
         <ellipse
@@ -557,7 +557,7 @@ const AnimatedCosmicInterface = () => {
           ry="200"
           fill="none"
           stroke="rgba(180, 130, 255, 0.2)"
-          stroke-width="1"
+          strokeWidth="1"
           transform="rotate(-20 400 400)"
         />
 
@@ -579,7 +579,7 @@ const AnimatedCosmicInterface = () => {
           x2="700"
           y2="150"
           stroke="rgba(255, 255, 255, 0.6)"
-          stroke-width="1"
+          strokeWidth="1"
         >
           <animate
             attributeName="opacity"
