@@ -34,7 +34,7 @@ import SouvikBiswas from "../assets/core-members/SouvikBiswas.jpg";
 // import SohamSahoo from "../assets/core-members/SohamSahoo.jpg";
 import AnkanaDutta from "../assets/core-members/AnkanaDutta.jpg";
 // import AnkanSarkar from "../assets/core-members/AnkanSarkar.jpg";
-import NilanjanGhosh from "../assets/core-members/NilanjanGhosh.JPG";
+import NilanjanGhosh from "../assets/core-members/NilanjanGhosh.jpg";
 import SouvikPal from "../assets/core-members/SouvikPal.jpeg";
 // import PratikPatra from "../assets/core-members/PratikPatra.jpg";
 // import MrinalMukherjee from "../assets/core-members/MrinalMukherjee.jpg";
