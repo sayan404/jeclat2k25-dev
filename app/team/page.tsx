@@ -10,6 +10,7 @@ import Image from "next/image";
 import SayanMajumder from "../assets/core-members/SayanMajumder.jpg";
 import ArnabMukherjee from "../assets/core-members/ArnabMukherjee.jpeg";
 import AkashGhosh from "../assets/core-members/AkashGhosh.jpg";
+
 // import SouvikMondal from "../assets/core-members/SouvikMondal.jpg";
 // import TaibuRay from "../assets/core-members/TaibuRay.jpg";
 import AmanGond from "../assets/core-members/AmanKumarGond.jpg";
