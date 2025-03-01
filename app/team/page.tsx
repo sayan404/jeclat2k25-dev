@@ -14,7 +14,7 @@ import AkashGhosh from "../assets/core-members/AkashGhosh.jpg";
 // import SouvikMondal from "../assets/core-members/SouvikMondal.jpg";
 // import TaibuRay from "../assets/core-members/TaibuRay.jpg";
 import AmanGond from "../assets/core-members/AmanKumarGond.jpg";
-import SubhajitAsh from "../assets/core-members/SubhajitAsh.JPG";
+import SubhajitAsh from "../assets/core-members/SubhajitAsh.jpg";
 import MalayPoulik from "../assets/core-members/MalayPoulik.jpg";
 // import TapobrotoMandal from "../assets/core-members/TapobrotoMandal.jpg";
 import MrutyunjayPradhan from "../assets/core-members/MrutyunjayPradhan.jpg";
