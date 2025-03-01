@@ -104,7 +104,7 @@ const AnimatedCosmicInterface = () => {
           stroke="rgba(255, 170, 80, 0.7)"
           strokeWidth="5"
           strokeDasharray="400 520"
-          stroke-linecap="round"
+          strokeLinecap="round"
         >
           <animateTransform
             attributeName="transform"
@@ -471,8 +471,8 @@ const AnimatedCosmicInterface = () => {
         <text
           x="220"
           y="260"
-          font-family="Arial, sans-serif"
-          font-size="12"
+          fontFamily="Arial, sans-serif"
+          fontSize="12"
           fill="rgba(255, 255, 255, 0.8)"
         >
           PROXIMA
@@ -480,8 +480,8 @@ const AnimatedCosmicInterface = () => {
         <text
           x="580"
           y="290"
-          font-family="Arial, sans-serif"
-          font-size="12"
+          fontFamily="Arial, sans-serif"
+          fontSize="12"
           fill="rgba(255, 255, 255, 0.8)"
         >
           HELIOS
@@ -489,8 +489,8 @@ const AnimatedCosmicInterface = () => {
         <text
           x="150"
           y="380"
-          font-family="Arial, sans-serif"
-          font-size="10"
+          fontFamily="Arial, sans-serif"
+          fontSize="10"
           fill="rgba(255, 255, 255, 0.7)"
         >
           TELEMETRY
@@ -498,8 +498,8 @@ const AnimatedCosmicInterface = () => {
         <text
           x="650"
           y="430"
-          font-family="Arial, sans-serif"
-          font-size="10"
+          fontFamily="Arial, sans-serif"
+          fontSize="10"
           fill="rgba(255, 255, 255, 0.7)"
         >
           OUTPOST
@@ -507,8 +507,8 @@ const AnimatedCosmicInterface = () => {
         <text
           x="400"
           y="540"
-          font-family="Arial, sans-serif"
-          font-size="10"
+          fontFamily="Arial, sans-serif"
+          fontSize="10"
           fill="rgba(255, 255, 255, 0.7)"
         >
           CORE
@@ -517,8 +517,8 @@ const AnimatedCosmicInterface = () => {
         <text
           x="510"
           y="180"
-          font-family="Arial, sans-serif"
-          font-size="14"
+          fontFamily="Arial, sans-serif"
+          fontSize="14"
           fill="rgba(255, 155, 155, 0.8)"
         >
           32/97
@@ -526,8 +526,8 @@ const AnimatedCosmicInterface = () => {
         <text
           x="300"
           y="180"
-          font-family="Arial, sans-serif"
-          font-size="14"
+          fontFamily="Arial, sans-serif"
+          fontSize="14"
           fill="rgba(155, 255, 155, 0.8)"
         >
           15:4

@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from "react";
 import Header from "./components/Header";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import CosmicLoader from "./components/ui/CosmicLoader";
+
 const links = [
   {
     text: "about",
@@ -315,6 +317,12 @@ const AnimatedCards = ({
 
 const TimeTravelLanding = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 2000);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Animation for time distortion effects
   useEffect(() => {
@@ -552,10 +560,10 @@ const TimeTravelLanding = () => {
 
   return (
     <div className="min-h-screen text-cyan-400 font-bold flex flex-col justify-center items-center relative overflow-hidden bg-black">
-      {/* Canvas for physics simulation */}
+      <CosmicLoader isVisible={isLoading} />
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 "
+        className="absolute inset-0"
         style={{ pointerEvents: "none" }}
       />
 
@@ -613,7 +621,7 @@ const TimeTravelLanding = () => {
           transition={{ duration: 2, repeat: Infinity }}
         >
           {Array.from("JECLAT 2K25").map((letter, index) => (
-            <motion.span 
+            <motion.span
               className="font-astral tracking-tight md:tracking-wide"
               key={index}
               initial={{ opacity: 0, y: 20 }}

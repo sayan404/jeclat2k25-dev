@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Header from "../components/Header";
 import EventCard from "../components/EventCard";
 import CategoryFilter from "../components/CategoryFilter";
+import CosmicLoader from "../components/ui/CosmicLoader";
 
 const events = [
   // Day 1
@@ -321,6 +322,12 @@ const events = [
 export default function EventsPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Get unique categories
   const categories = useMemo(() => {
@@ -352,85 +359,88 @@ export default function EventsPage() {
   };
 
   return (
-    <main className="max-h-screen bg-black relative overflow-hidden">
-      {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full">
-        <div className="absolute inset-0 bg-black/60 z-10" /> {/* Overlay */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="/event_page_bg.mp4" type="video/mp4" />
-        </video>
-      </div>
+    <>
+      <CosmicLoader isVisible={isLoading} />
+      <main className="lg:max-h-screen md:max-h-screen bg-black relative overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 w-full h-full">
+          <div className="absolute inset-0 bg-black/60 z-10" /> {/* Overlay */}
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/event_page_bg.mp4" type="video/mp4" />
+          </video>
+        </div>
 
-      {/* Content */}
-      <Header />
-      <div className="relative z-20 flex justify-center items-center mt-10">
-        <div className="flex flex-col justify-center items-center min-h-screen w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
-          <div className="text-center mb-8">
-            <p className="text-white text-4xl font-highbright font-bold mb-1 space-x-4">
-              <span className="text-orange-yellow">Events</span>
-            </p>
-            <div className="space-y-1">
-              <h2 className="text-transparent bg-clip-text bg-white font-sugarPeachy text-xl  tracking-wider">
-                It&apos;s time to showcase your creative calibre
-              </h2>
-            </div>
-          </div>
-          <CategoryFilter
-            categories={categories}
-            selectedCategory={selectedCategory}
-            onCategoryChange={handleCategoryChange}
-          />
-
-          <div className="relative w-full max-w-7xl font-sugarPeachy">
-            {/* Carousel Container */}
-            <div className="overflow-hidden">
-              <div
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-              >
-                {filteredEvents.map((event) => (
-                  <div
-                    key={event.id + Math.random() + Date.now()}
-                    className="w-full flex-shrink-0 px-0 sm:px-4"
-                  >
-                    <EventCard
-                      {...event}
-                      onNext={nextSlide}
-                      onPrev={prevSlide}
-                    />
-                  </div>
-                ))}
+        {/* Content */}
+        <Header />
+        <div className="relative z-20 flex justify-center items-center mt-10">
+          <div className="flex flex-col justify-center items-center min-h-screen w-full px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
+            <div className="text-center mb-8">
+              <p className="text-white text-4xl font-highbright font-bold mb-1 space-x-4">
+                <span className="text-orange-yellow">Events</span>
+              </p>
+              <div className="space-y-1">
+                <h2 className="text-transparent bg-clip-text bg-white font-sugarPeachy text-xl  tracking-wider">
+                  It&apos;s time to showcase your creative calibre
+                </h2>
               </div>
             </div>
-          </div>
+            <CategoryFilter
+              categories={categories}
+              selectedCategory={selectedCategory}
+              onCategoryChange={handleCategoryChange}
+            />
 
-          {/* Dots Indicator */}
-          <div className="flex flex-col items-center gap-4">
-            <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
-              {filteredEvents.map((_, index) => (
-                <button
-                  key={index + Math.random() + Date.now()}
-                  className={`h-2 transition-all duration-300 rounded-full ${
-                    index === currentIndex
-                      ? "w-8 bg-gradient-to-r from-orange-yellow to-blue-400"
-                      : "w-2 bg-white/20 hover:bg-white/40"
-                  }`}
-                  onClick={() => setCurrentIndex(index)}
-                />
-              ))}
+            <div className="relative w-full max-w-7xl font-sugarPeachy">
+              {/* Carousel Container */}
+              <div className="overflow-hidden">
+                <div
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                >
+                  {filteredEvents.map((event) => (
+                    <div
+                      key={event.id + Math.random() + Date.now()}
+                      className="w-full flex-shrink-0 px-0 sm:px-4"
+                    >
+                      <EventCard
+                        {...event}
+                        onNext={nextSlide}
+                        onPrev={prevSlide}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-            <p className="font-sugarPeachy text-white/70 text-sm">
-              {currentIndex + 1} / {filteredEvents.length}
-            </p>
+
+            {/* Dots Indicator */}
+            <div className="flex flex-col items-center gap-4">
+              <div className="flex justify-center mt-6 sm:mt-8 space-x-2">
+                {filteredEvents.map((_, index) => (
+                  <button
+                    key={index + Math.random() + Date.now()}
+                    className={`h-2 transition-all duration-300 rounded-full ${
+                      index === currentIndex
+                        ? "w-8 bg-gradient-to-r from-orange-yellow to-blue-400"
+                        : "w-2 bg-white/20 hover:bg-white/40"
+                    }`}
+                    onClick={() => setCurrentIndex(index)}
+                  />
+                ))}
+              </div>
+              <p className="font-sugarPeachy text-white/70 text-sm">
+                {currentIndex + 1} / {filteredEvents.length}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </>
   );
 }

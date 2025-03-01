@@ -1,10 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import AnimatedCosmicInterface from "@/components/ui/AnimatedCosmicInterface";
 import { IconBrandInstagram, IconBrandLinkedin } from "@tabler/icons-react";
 import StarField from "@/components/ui/StarField";
 import Image from "next/image";
+import CosmicLoader from "../components/ui/CosmicLoader";
+import Link from "next/link";
 
 // Import all member images
 import SayanMajumder from "../assets/core-members/SayanMajumder.jpg";
@@ -43,8 +45,6 @@ import LizaGoswami from "../assets/core-members/LizaGoswami.jpg";
 // import PriyadarshiniJha from "../assets/core-members/PriyadarshiniJha.jpg";
 // import SoumenMallick from "../assets/core-members/SoumenMallick.jpg";
 
-// ... import other member images similarly
-
 // Create a mapping of names to their images
 const memberImages: { [key: string]: any } = {
   "Sayan Majumder": SayanMajumder,
@@ -77,6 +77,97 @@ const memberImages: { [key: string]: any } = {
   // "Ankan Sarkar": AnkanSarkar,
   "Nilanjan Ghosh": NilanjanGhosh,
   "Souvik Pal": SouvikPal,
+  // "Miyaraj Laskar": MiyarajLaskar,
+  // "Priyadarshini Jha": PriyadarshiniJha,
+  // "Soumen Mallick": SoumenMallick,
+  // "Addreeja Lohar": AddreejaLohar
+};
+const SocialHandles: { [key: string]: any } = {
+  "Sayan Majumder": {
+    insta: "https://www.instagram.com/_sayan404_/",
+    linkedin: "https://www.linkedin.com/in/sayan404/",
+  },
+  "Arnab Mukherjee": {
+    insta: "https://www.instagram.com/arnab_mukherjee/",
+    linkedin:
+      "https://www.linkedin.com/in/arnab-mukherjee-0000000000000000000000000000000000000000/",
+  },
+  "Akash Ghosh": {
+    insta: "https://www.instagram.com/akash_ghosh_/",
+    linkedin:
+      "https://www.linkedin.com/in/akash-ghosh-0000000000000000000000000000000000000000/",
+  },
+  // "Souvik Mondal": SouvikMondal,
+  // "Taibu Ray": TaibuRay,
+  "Aman Kumar Gond": {
+    insta: "https://www.instagram.com/aman_kumar_gond/",
+    linkedin:
+      "https://www.linkedin.com/in/aman-kumar-gond-0000000000000000000000000000000000000000/",
+  },
+  "Mrutyunjay Pradhan": {
+    insta: "https://www.instagram.com/mrutyunjay_pradhan/",
+    linkedin:
+      "https://www.linkedin.com/in/mrutyunjay-pradhan-0000000000000000000000000000000000000000/",
+  },
+  "Subhajit Ash": {
+    insta: "https://www.instagram.com/subhajit_ash/",
+    linkedin:
+      "https://www.linkedin.com/in/subhajit-ash-0000000000000000000000000000000000000000/",
+  },
+  "Malay Poulik": {
+    insta: "https://www.instagram.com/malay_poulik/",
+    linkedin:
+      "https://www.linkedin.com/in/malay-poulik-0000000000000000000000000000000000000000/",
+  },
+  // "Tapobroto Mandal": TapobrotoMandal,
+  "Amarjeet Napit": {
+    insta: "https://www.instagram.com/amarjeet_napit/",
+    linkedin:
+      "https://www.linkedin.com/in/amarjeet-napit-0000000000000000000000000000000000000000/",
+  },
+  // "Prem Kumar Oraon": PremOraon,
+  // "Rohini Afsana": RohiniAfsana,
+  // "Sourav Ganguly": SouravGanguly,
+  // "Mousumi Tudu": MousumiTudu,
+  // "Mannu Kumar Verma": MannuKumarVerma,
+  "Akash Layek": {
+    insta: "https://www.instagram.com/akash_layek/",
+    linkedin:
+      "https://www.linkedin.com/in/akash-layek-0000000000000000000000000000000000000000/",
+  },
+  // "Pratik Patra": PratikPatra,
+  // "Mrinal Mukherjee": MrinalMukherjee,
+  "Liza Goswami": {
+    insta: "https://www.instagram.com/liza_goswami/",
+    linkedin:
+      "https://www.linkedin.com/in/liza-goswami-0000000000000000000000000000000000000000/",
+  },
+  "Souvik Biswas": {
+    insta: "https://www.instagram.com/souvik_biswas/",
+    linkedin:
+      "https://www.linkedin.com/in/souvik-biswas-0000000000000000000000000000000000000000/",
+  },
+  // "Sakib": Sakib,
+  // "Amit Mondal": AmitMondal,
+  // "Joydip Sinha": JoydipSinha,
+  // "Somrik": Somrik,
+  // "Soham Sahoo": SohamSahoo,
+  "Ankana Dutta": {
+    insta: "https://www.instagram.com/ankana_dutta/",
+    linkedin:
+      "https://www.linkedin.com/in/ankana-dutta-0000000000000000000000000000000000000000/",
+  },
+  // "Ankan Sarkar": AnkanSarkar,
+  "Nilanjan Ghosh": {
+    insta: "https://www.instagram.com/nilanjan_ghosh/",
+    linkedin:
+      "https://www.linkedin.com/in/nilanjan-ghosh-0000000000000000000000000000000000000000/",
+  },
+  "Souvik Pal": {
+    insta: "https://www.instagram.com/souvik_pal/",
+    linkedin:
+      "https://www.linkedin.com/in/souvik-pal-0000000000000000000000000000000000000000/",
+  },
   // "Miyaraj Laskar": MiyarajLaskar,
   // "Priyadarshini Jha": PriyadarshiniJha,
   // "Soumen Mallick": SoumenMallick,
@@ -119,6 +210,7 @@ const teamData = {
 const MemberCard = ({ name, role }: { name: string; role: string }) => {
   const [imageError, setImageError] = useState(false);
   const memberImage = memberImages[name];
+  const socialHandles = SocialHandles[name];
 
   return (
     <div className="w-full max-w-xl bg-gradient-to-b from-blue-900/30 to-purple-900/30 backdrop-blur-sm rounded-xl border border-blue-500/30 hover:scale-105 transition-transform duration-300">
@@ -146,12 +238,16 @@ const MemberCard = ({ name, role }: { name: string; role: string }) => {
           <div className="mt-2 flex gap-2">
             <div className="w-8 h-8 flex items-center justify-center hover:text-blue-500 transition-colors cursor-pointer">
               <span className="text-blue-300 text-lg">
-                <IconBrandLinkedin />
+                <Link href={socialHandles?.linkedin || "#"} target="_blank">
+                  <IconBrandLinkedin />
+                </Link>
               </span>
             </div>
             <div className="w-8 h-8 flex items-center justify-center hover:text-blue-500 transition-colors cursor-pointer">
               <span className="text-blue-300 text-lg">
-                <IconBrandInstagram />
+                <Link href={socialHandles?.insta || "#"} target="_blank">
+                  <IconBrandInstagram />
+                </Link>
               </span>
             </div>
           </div>
@@ -164,9 +260,11 @@ const MemberCard = ({ name, role }: { name: string; role: string }) => {
 const ChiefCoordinatorCard = ({
   name,
   position,
+  socialHandles,
 }: {
   name: string;
   position: "left" | "right";
+  socialHandles: any;
 }) => (
   <div
     className={`
@@ -190,12 +288,16 @@ const ChiefCoordinatorCard = ({
       <div className="mt-4 flex gap-2">
         <div className="w-8 h-8 flex items-center justify-center hover:text-blue-500 transition-colors cursor-pointer">
           <span className="text-blue-300 text-lg">
-            <IconBrandLinkedin />
+            <Link href={socialHandles?.linkedin || "#"} target="_blank">
+              <IconBrandLinkedin />
+            </Link>
           </span>
         </div>
         <div className="w-8 h-8 flex items-center justify-center hover:text-blue-500 transition-colors cursor-pointer">
           <span className="text-blue-300 text-lg">
-            <IconBrandInstagram />
+            <Link href={socialHandles?.insta || "#"} target="_blank">
+              <IconBrandInstagram />
+            </Link>
           </span>
         </div>
       </div>
@@ -223,49 +325,71 @@ const TeamSection = ({
 );
 
 const TeamPage = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time or handle actual loading state
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-black text-white relative">
-      <StarField />
-      <Header />
-      <main className="flex flex-col items-center p-4 bg-transparent text-white pt-2">
-        <div className="w-full max-w-2xl relative">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold mt-20 text-center font-highbright text-orange-yellow">
-              Our Team
-            </h1>
-            <div className="space-y-1">
-              <h2 className="text-transparent bg-clip-text bg-white font-sugarPeachy text-xl  tracking-wider">
-                Presenting you the JECLAT 2K23 Core Team!{" "}
-              </h2>
+    <>
+      <CosmicLoader isVisible={isLoading} />
+      <div className="min-h-screen bg-black text-white relative font-sugarPeachy">
+        <StarField />
+        <Header />
+        <main className="flex flex-col items-center p-4 bg-transparent text-white pt-2">
+          <div className="w-full max-w-2xl relative">
+            <div className="text-center">
+              <h1 className="text-4xl font-bold mt-20 text-center font-highbright text-orange-yellow">
+                Our Team
+              </h1>
+              <div className="space-y-1">
+                <h2 className="text-transparent bg-clip-text bg-white font-sugarPeachy text-xl  tracking-wider">
+                  Presenting you the JECLAT 2K23 Core Team!{" "}
+                </h2>
+              </div>
+            </div>
+            <div className="md:hidden mt-2 space-y-6 mb-8">
+              {teamData["Chief-coordinators"].map((name, index) => (
+                <ChiefCoordinatorCard
+                  key={name}
+                  name={name}
+                  position={index === 0 ? "left" : "right"}
+                  socialHandles={SocialHandles[name]}
+                />
+              ))}
+            </div>
+
+            <div className="hidden md:flex flex-row flex-wrap relative">
+              <div className="h-[90%] w-[90%]">
+                <AnimatedCosmicInterface />
+              </div>
+              <ChiefCoordinatorCard
+                name="Arnab Mukherjee"
+                position="left"
+                socialHandles={SocialHandles["Arnab Mukherjee"]}
+              />
+              <ChiefCoordinatorCard
+                name="Akash Ghosh"
+                position="right"
+                socialHandles={SocialHandles["Akash Ghosh"]}
+              />
             </div>
           </div>
-          <div className="md:hidden mt-2 space-y-6 mb-8">
-            {teamData["Chief-coordinators"].map((name, index) => (
-              <ChiefCoordinatorCard
-                key={name}
-                name={name}
-                position={index === 0 ? "left" : "right"}
-              />
-            ))}
-          </div>
 
-          <div className="hidden md:flex flex-row flex-wrap relative">
-            <div className="h-[90%] w-[90%]"><AnimatedCosmicInterface /></div>
-            <ChiefCoordinatorCard name="Arnab Mukherjee" position="left" />
-            <ChiefCoordinatorCard name="Akash Ghosh" position="right" />
+          <div className="w-full max-w-7xl px-2">
+            {Object.entries(teamData).map(
+              ([role, members]) =>
+                role !== "Chief-coordinators" && (
+                  <TeamSection key={role} role={role} members={members} />
+                )
+            )}
           </div>
-        </div>
-
-        <div className="w-full max-w-7xl px-2">
-          {Object.entries(teamData).map(
-            ([role, members]) =>
-              role !== "Chief-coordinators" && (
-                <TeamSection key={role} role={role} members={members} />
-              )
-          )}
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
+    </>
   );
 };
 

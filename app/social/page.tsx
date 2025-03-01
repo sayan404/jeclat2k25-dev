@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../components/Header";
+import CosmicLoader from "../components/ui/CosmicLoader";
 
 interface Artist {
   id: number;
@@ -179,6 +180,12 @@ const ARTISTS_DATA: Artist[] = [
 export default function SocialPage() {
   const [selectedYear, setSelectedYear] = useState<number | "all">("all");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const filteredArtists = ARTISTS_DATA.filter((artist) => {
     const yearMatch =
@@ -189,107 +196,112 @@ export default function SocialPage() {
   });
 
   return (
-    <div className="min-h-screen bg-black relative">
-      {/* Starry Background */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="stars-container absolute inset-0">
-          {[...Array(200)].map((_, i) => (
-            <div
-              key={i}
-              className="star"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 5}s`,
-                animationDuration: `${1 + Math.random() * 2}s`,
-              }}
-            />
-          ))}
+    <>
+      <CosmicLoader isVisible={isLoading} />
+      <div className="min-h-screen bg-black relative font-sugarPeachy">
+        {/* Starry Background */}
+        <div className="fixed inset-0 overflow-hidden pointer-events-none">
+          <div className="stars-container absolute inset-0">
+            {[...Array(200)].map((_, i) => (
+              <div
+                key={i}
+                className="star"
+                style={{
+                  top: `${Math.random() * 100}%`,
+                  left: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 5}s`,
+                  animationDuration: `${1 + Math.random() * 2}s`,
+                }}
+              />
+            ))}
+          </div>
         </div>
-      </div>
 
-      <Header />
+        <Header />
 
-      {/* Filters */}
-      <div className="container mx-auto px-4 py-6 pt-24 opacity-90">
-        <h1 className= "text-4xl font-highbright text-center mb-2 text-orange-yellow" >Social Night</h1>
-        <div className="flex flex-col justify-center items-center gap-6 mb-12">
-          {/* Year Filter */}
-          <div className="flex flex-col gap-3">
-            {/* <h3 className="text-white text-lg font-medium text-center">Year</h3> */}
-            <div className="flex flex-wrap gap-3">
-              <button
-                onClick={() => setSelectedYear("all")}
-                className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                  selectedYear === "all"
-                    ? "bg-gradient-to-r from-white to-blue-400 text-black"
-                    : "bg-gray-800 text-gray-400 hover:bg-gray-700"
-                }`}
-              >
-                All Years
-              </button>
-              {[2023, 2022, 2019, 2018, 2017].map((year) => (
+        {/* Filters */}
+        <div className="container mx-auto px-4 py-6 pt-24 opacity-90">
+          <h1 className="text-4xl font-highbright text-center mb-2 text-orange-yellow">
+            Social Night
+          </h1>
+          <div className="flex flex-col justify-center items-center gap-6 mb-12">
+            {/* Year Filter */}
+            <div className="flex flex-col gap-3">
+              {/* <h3 className="text-white text-lg font-medium text-center">Year</h3> */}
+              <div className="flex flex-wrap gap-3">
                 <button
-                  key={year}
-                  onClick={() => setSelectedYear(year)}
+                  onClick={() => setSelectedYear("all")}
                   className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                    selectedYear === year
+                    selectedYear === "all"
                       ? "bg-gradient-to-r from-white to-blue-400 text-black"
                       : "bg-gray-800 text-gray-400 hover:bg-gray-700"
                   }`}
                 >
-                  {year}
+                  All Years
                 </button>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Artist Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
-          {filteredArtists.map((artist) => (
-            <div
-              key={artist.id}
-              className="group relative h-[520px] overflow-hidden"
-            >
-              {/* Background Image */}
-              <img
-                src={artist.image}
-                alt={artist.name}
-                className="absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:opacity-30"
-              />
-
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-
-              {/* Content */}
-              <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                {/* Static Content (Always Visible) */}
-                <h3 className="text-3xl font-bold text-white mb-2 transform transition-transform duration-300 group-hover:translate-y-[-30px]">
-                  {artist.name}
-                </h3>
-                <div className="flex items-center gap-2 text-gray-300 mb-3 transform transition-transform duration-300 group-hover:translate-y-[-30px]">
-                  <span className="px-3 py-1 bg-purple-600/30 rounded-full text-sm">
-                    {artist.category}
-                  </span>
-                  <span className="px-3 py-1 bg-purple-600/30 rounded-full text-sm">
-                    {artist.performance_year}
-                  </span>
-                </div>
-
-                {/* Description (Appears on Hover) */}
-                <p
-                  className="text-gray-300 transform transition-all duration-300 
-                  opacity-0 translate-y-[10px] group-hover:opacity-100 group-hover:translate-y-0 
-                  line-clamp-3"
-                >
-                  {artist.description}
-                </p>
+                {[2023, 2022, 2019, 2018, 2017].map((year) => (
+                  <button
+                    key={year}
+                    onClick={() => setSelectedYear(year)}
+                    className={`px-6 py-2 rounded-full transition-all duration-300 ${
+                      selectedYear === year
+                        ? "bg-gradient-to-r from-white to-blue-400 text-black"
+                        : "bg-gray-800 text-gray-400 hover:bg-gray-700"
+                    }`}
+                  >
+                    {year}
+                  </button>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
+
+          {/* Artist Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
+            {filteredArtists.map((artist) => (
+              <div
+                key={artist.id}
+                className="group relative h-[520px] overflow-hidden"
+              >
+                {/* Background Image */}
+                <img
+                  src={artist.image}
+                  alt={artist.name}
+                  className="absolute inset-0 w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:opacity-30"
+                />
+
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+
+                {/* Content */}
+                <div className="absolute inset-0 p-6 flex flex-col justify-end">
+                  {/* Static Content (Always Visible) */}
+                  <h3 className="text-3xl font-bold text-white mb-2 transform transition-transform duration-300 group-hover:translate-y-[-30px]">
+                    {artist.name}
+                  </h3>
+                  <div className="flex items-center gap-2 text-gray-300 mb-3 transform transition-transform duration-300 group-hover:translate-y-[-30px]">
+                    <span className="px-3 py-1 bg-purple-600/30 rounded-full text-sm">
+                      {artist.category}
+                    </span>
+                    <span className="px-3 py-1 bg-purple-600/30 rounded-full text-sm">
+                      {artist.performance_year}
+                    </span>
+                  </div>
+
+                  {/* Description (Appears on Hover) */}
+                  <p
+                    className="text-gray-300 transform transition-all duration-300 
+                    opacity-0 translate-y-[10px] group-hover:opacity-100 group-hover:translate-y-0 
+                    line-clamp-3"
+                  >
+                    {artist.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
