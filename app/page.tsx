@@ -297,7 +297,7 @@ const AnimatedCards = ({
             boxShadow: "0px 0px 20px rgba(0, 255, 255, 0.8)",
           }}
           transition={{ type: "spring", stiffness: 100 }}
-          className="relative flex flex-col items-center text-center group z-50 py-3 px-2
+          className="relative flex flex-col items-center text-center group py-3 px-2
             border-2 border-cyan-400 backdrop-blur-xl rounded-2xl 
             hover:shadow-xl transition-all duration-300 
             w-[calc(33%-8px)] min-w-[90px] md:w-40 md:py-5"
@@ -560,7 +560,10 @@ const TimeTravelLanding = () => {
 
   return (
     <div className="min-h-screen text-cyan-400 font-bold flex flex-col justify-center items-center relative overflow-hidden bg-black">
-      <CosmicLoader isVisible={isLoading} />
+      <div className="z-5000">
+        {" "}
+        <CosmicLoader isVisible={isLoading} />
+      </div>
       <canvas
         ref={canvasRef}
         className="absolute inset-0"
