@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import EventCard from "../components/EventCard";
 import CategoryFilter from "../components/CategoryFilter";
 import CosmicLoader from "../components/ui/CosmicLoader";
-import init from "../assets/events/init.jpg";
+import init from "../assets/events/init.png";
 import cultural from "../assets/events/cultural.jpg";
 import jyoti from "../assets/events/jyoti.jpg";
 import flashmob from "../assets/events/flashmob.png";
