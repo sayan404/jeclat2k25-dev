@@ -70,9 +70,9 @@ const config: Config = {
         "pop-in": "popIn 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)",
         "gradient-xy": "gradient-xy 15s ease infinite",
         // "spin-slow": "spin 10s linear infinite",
-        'spin-slow': 'spin 3s linear infinite',
-        'ping': 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
-        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        "spin-slow": "spin 3s linear infinite",
+        ping: "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",
+        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       backgroundImage: {
         "gradient-sky": "linear-gradient(to bottom, #2D1E5F, #FFA500)",
@@ -125,9 +125,9 @@ const config: Config = {
         sharp: "2px 2px 0px rgba(0, 0, 0, 0.3)",
       },
       transitionDuration: {
-        '2000': '2000ms',
-        '2500': '2500ms',
-        '3000': '3000ms',
+        "2000": "2000ms",
+        "2500": "2500ms",
+        "3000": "3000ms",
       },
       lineHeight: {
         relaxed: "1.75",
@@ -190,6 +190,9 @@ const config: Config = {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+      },
+      screens: {
+        cust: { max: "900px" },
       },
     },
   },

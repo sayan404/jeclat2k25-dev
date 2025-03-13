@@ -577,14 +577,14 @@ const TimeTravelLanding = () => {
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
-        className="absolute top-4 left-4 md:top-10 md:left-10 z-50"
+        className="absolute top-10 left-2/5  transform -translate-x-1/2 md:top-10 md:left-10 z-10"
       >
         <Image
           src="/logo.png"
           alt="Jeclat Logo"
           width={130}
           height={130}
-          className="w-24 sm:w-[70%] drop-shadow-[0_0_15px_rgba(0,255,255,0.5)] 
+          className="w-24 sm:w-[70%]  drop-shadow-[0_0_15px_rgba(0,255,255,0.5)] 
             hover:scale-110 transition-transform duration-300"
         />
       </motion.div>
@@ -619,7 +619,9 @@ const TimeTravelLanding = () => {
       </div>
       <div className="text-center">
         <motion.h1
-          className="text-4xl font-astral sm:text-6xl md:text-8xl uppercase font-extrabold tracking-wide bg-gradient-to-b from-white to-[#00B2A9] bg-clip-text text-transparent"
+          className="text-4xl mb-10 font-astral sm:text-6xl md:text-8xl cust:text-5xl cust:mt-16 
+            uppercase font-extrabold tracking-wide bg-gradient-to-b from-white to-[#00B2A9] 
+            bg-clip-text text-transparent"
           animate={{ scale: [1, 1.04, 1] }}
           transition={{ duration: 2, repeat: Infinity }}
         >

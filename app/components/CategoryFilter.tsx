@@ -13,7 +13,7 @@ export default function CategoryFilter({
     <div className="flex flex-wrap justify-center gap-3 mb-4">
       <button
         onClick={() => onCategoryChange(null)}
-        className={`px-4 py-2 rounded-full backdrop-blur-md transition-all duration-300 font-sugarPeachy text-lg ${
+        className={`px-4 py-2 rounded-full backdrop-blur-md transition-all duration-300 font-sugarPeachy text-sm ${
           selectedCategory === null
             ? "bg-gradient-to-r from-white to-blue-400 text-black"
             : "bg-white/10 text-white hover:bg-white/20"
@@ -25,7 +25,7 @@ export default function CategoryFilter({
         <button
           key={category}
           onClick={() => onCategoryChange(category)}
-          className={`px-4 py-2 rounded-full backdrop-blur-md transition-all duration-300 font-sugarPeachy text-lg ${
+          className={`px-4 py-2 rounded-full backdrop-blur-md transition-all duration-300 font-sugarPeachy text-sm ${
             selectedCategory === category
               ? "bg-gradient-to-r from-orange-yellow to-blue-400 text-black"
               : "bg-white/10 text-white hover:bg-white/20"

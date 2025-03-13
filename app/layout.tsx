@@ -14,6 +14,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import "./styles/stars.css";
+import { Analytics } from '@vercel/analytics/next';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -112,7 +113,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${doto.variable} ${geistNoto.variable} ${getPoppins.variable} ${pressStart2P.variable} ${cedarvilleCursive.variable} ${playfair.variable} ${orbitron.variable} ${rajdhani.variable} ${audiowide.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body>{children}
+      <Analytics mode="production" />
+      </body>
     </html>
   );
 }
