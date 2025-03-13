@@ -1,8 +1,9 @@
-import { AppProvider } from '../context/AppContext';
-import { ErrorBoundary } from '../components/ErrorBoundary';
-import PerformanceWrapper from '../components/PerformanceWrapper';
+import { AppProps } from "next/app";
+import { AppProvider } from "../context/AppContext";
+import { ErrorBoundary } from "../components/ErrorBoundary";
+import PerformanceWrapper from "../components/PerformanceWrapper";
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <ErrorBoundary>
       <AppProvider>
@@ -12,4 +13,4 @@ export default function App({ Component, pageProps }) {
       </AppProvider>
     </ErrorBoundary>
   );
-} 
+}
