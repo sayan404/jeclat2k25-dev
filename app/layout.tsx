@@ -14,7 +14,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import "./styles/stars.css";
-import { Analytics } from '@vercel/analytics/next';
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,11 +25,13 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
 const getPoppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "900"],
 });
+
 const geistNoto = Noto_Sans({
   variable: "--font-noto-sans",
   subsets: ["latin"],
@@ -113,8 +115,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${doto.variable} ${geistNoto.variable} ${getPoppins.variable} ${pressStart2P.variable} ${cedarvilleCursive.variable} ${playfair.variable} ${orbitron.variable} ${rajdhani.variable} ${audiowide.variable} antialiased`}
     >
-      <body>{children}
-      <Analytics mode="production" />
+      <body>
+        {children}
+        <Analytics mode="production" />
       </body>
     </html>
   );
