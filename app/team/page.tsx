@@ -89,41 +89,34 @@ const SocialHandles: { [key: string]: any } = {
   },
   "Arnab Mukherjee": {
     insta: "https://www.instagram.com/arnab_mukherjee/",
-    linkedin:
-      "https://www.linkedin.com/in/arnab-mukherjee-0000000000000000000000000000000000000000/",
+    linkedin: "https://www.linkedin.com/in/arnab-663-mukherjee",
   },
   "Akash Ghosh": {
-    insta: "https://www.instagram.com/akash_ghosh_/",
-    linkedin:
-      "https://www.linkedin.com/in/akash-ghosh-0000000000000000000000000000000000000000/",
+    insta: "https://www.instagram.com/chaos_ride_r",
+    linkedin: "https://www.linkedin.com/in/akash-ghosh-b8565a22b",
   },
   // "Souvik Mondal": SouvikMondal,
   // "Taibu Ray": TaibuRay,
   "Aman Kumar Gond": {
-    insta: "https://www.instagram.com/aman_kumar_gond/",
-    linkedin:
-      "https://www.linkedin.com/in/aman-kumar-gond-0000000000000000000000000000000000000000/",
+    insta: "https://www.instagram.com/im.aman_08/",
+    linkedin: "https://www.linkedin.com/in/aman-kumar-gond525/",
   },
   "Mrutyunjay Pradhan": {
-    insta: "https://www.instagram.com/mrutyunjay_pradhan/",
-    linkedin:
-      "https://www.linkedin.com/in/mrutyunjay-pradhan-0000000000000000000000000000000000000000/",
+    insta: "https://www.instagram.com/_mrutyunjay_08",
+    linkedin: "https://www.linkedin.com/in/mrutyunjay-pradhan-b690a4226",
   },
   "Subhajit Ash": {
-    insta: "https://www.instagram.com/subhajit_ash/",
-    linkedin:
-      "https://www.linkedin.com/in/subhajit-ash-0000000000000000000000000000000000000000/",
+    insta: "https://www.instagram.com/subhajit_ash_99",
+    linkedin: "https://www.linkedin.com/in/subhajit-ash-623888212",
   },
   "Malay Poulik": {
-    insta: "https://www.instagram.com/malay_poulik/",
-    linkedin:
-      "https://www.linkedin.com/in/malay-poulik-0000000000000000000000000000000000000000/",
+    insta: "https://www.instagram.com/i_am_malay_18",
+    linkedin: "https://www.linkedin.com/in/malay-poulik-55316122a",
   },
   // "Tapobroto Mandal": TapobrotoMandal,
   "Amarjeet Napit": {
-    insta: "https://www.instagram.com/amarjeet_napit/",
-    linkedin:
-      "https://www.linkedin.com/in/amarjeet-napit-0000000000000000000000000000000000000000/",
+    insta: "https://www.instagram.com/amarjeet0026",
+    linkedin: "https://www.linkedin.com/in/amarjeet-napit-068b35208",
   },
   // "Prem Kumar Oraon": PremOraon,
   // "Rohini Afsana": RohiniAfsana,
@@ -131,21 +124,18 @@ const SocialHandles: { [key: string]: any } = {
   // "Mousumi Tudu": MousumiTudu,
   // "Mannu Kumar Verma": MannuKumarVerma,
   "Akash Layek": {
-    insta: "https://www.instagram.com/akash_layek/",
-    linkedin:
-      "https://www.linkedin.com/in/akash-layek-0000000000000000000000000000000000000000/",
+    insta: "https://www.instagram.com/_im.akash_63/profilecard/",
+    linkedin: "https://www.linkedin.com/in/akashkumarlayek",
   },
   // "Pratik Patra": PratikPatra,
   // "Mrinal Mukherjee": MrinalMukherjee,
   "Liza Goswami": {
-    insta: "https://www.instagram.com/liza_goswami/",
-    linkedin:
-      "https://www.linkedin.com/in/liza-goswami-0000000000000000000000000000000000000000/",
+    insta: "#",
+    linkedin: "#",
   },
   "Souvik Biswas": {
-    insta: "https://www.instagram.com/souvik_biswas/",
-    linkedin:
-      "https://www.linkedin.com/in/souvik-biswas-0000000000000000000000000000000000000000/",
+    insta: "https://www.instagram.com/tin_tin_106",
+    linkedin: "https://www.linkedin.com/in/souvik-biswas-508486224",
   },
   // "Sakib": Sakib,
   // "Amit Mondal": AmitMondal,
@@ -153,20 +143,20 @@ const SocialHandles: { [key: string]: any } = {
   // "Somrik": Somrik,
   // "Soham Sahoo": SohamSahoo,
   "Ankana Dutta": {
-    insta: "https://www.instagram.com/ankana_dutta/",
-    linkedin:
-      "https://www.linkedin.com/in/ankana-dutta-0000000000000000000000000000000000000000/",
+    insta: "#",
+    linkedin: "#",
   },
-  // "Ankan Sarkar": AnkanSarkar,
+  "Ankan Sarkar": {
+    insta: "https://www.instagram.com/ankansarkarjeet",
+    linkedin: "https://www.linkedin.com/in/ankan-sarkar-a23785225",
+  },
   "Nilanjan Ghosh": {
-    insta: "https://www.instagram.com/nilanjan_ghosh/",
-    linkedin:
-      "https://www.linkedin.com/in/nilanjan-ghosh-0000000000000000000000000000000000000000/",
+    insta: "#",
+    linkedin: "#",
   },
   "Souvik Pal": {
-    insta: "https://www.instagram.com/souvik_pal/",
-    linkedin:
-      "https://www.linkedin.com/in/souvik-pal-0000000000000000000000000000000000000000/",
+    insta: "#",
+    linkedin: "https://www.linkedin.com/in/souvik-pal-86903a224",
   },
   // "Miyaraj Laskar": MiyarajLaskar,
   // "Priyadarshini Jha": PriyadarshiniJha,
@@ -268,19 +258,22 @@ const ChiefCoordinatorCard = ({
 }) => (
   <div
     className={`
-      relative md:absolute md:top-1/2 md:transform md:-translate-y-1/2
-      ${position === "left" ? "md:-left-64" : "md:-right-64"}
-      w-full md:w-auto
+      relative md:absolute xl:absolute md:top-1/2 xl:top-1/2 md:transform xl:transform md:-translate-y-1/2 xl:-translate-y-1/2
+      ${
+        position === "left"
+          ? "md:left-4 lg:left-8 xl:-left-64"
+          : "md:right-4 lg:right-8 xl:-right-64"
+      }
+      w-full md:w-48 lg:w-52 xl:w-56
     `}
   >
-    <div className="w-full md:w-56 bg-gradient-to-b from-blue-900/30 to-purple-900/30 backdrop-blur-sm rounded-xl border border-blue-500/30 p-4 flex flex-col items-center justify-center group hover:scale-105 transition-transform duration-300">
-      {/* <div className="w-24 h-24 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 mb-4 group-hover:scale-110 transition-transform duration-300" /> */}
+    <div className="w-full bg-gradient-to-b from-blue-900/30 to-purple-900/30 backdrop-blur-sm rounded-xl border border-blue-500/30 p-4 flex flex-col items-center justify-center group hover:scale-105 transition-transform duration-300">
       <Image
         src={memberImages[name]}
         alt={name}
         width={200}
         height={200}
-        className="rounded-[10px] mb-4 w-[200px]"
+        className="rounded-[10px] mb-4 w-[150px] md:w-[120px] lg:w-[150px] xl:w-[200px]"
       />
       <h3 className="text-xl font-semibold text-white mb-2">{name}</h3>
       <p className="text-blue-300 text-sm">Chief Coordinator</p>
@@ -363,7 +356,7 @@ const TeamPage = () => {
             </div>
 
             <div className="hidden md:flex flex-row flex-wrap relative">
-              <div className="h-[90%] w-[90%]">
+              <div className="h-[90%] w-[90%] md:w-[80%] lg:w-[85%] xl:w-[90%] mx-auto">
                 <AnimatedCosmicInterface />
               </div>
               <ChiefCoordinatorCard
