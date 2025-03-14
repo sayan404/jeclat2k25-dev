@@ -23,7 +23,7 @@ const links = [
           height={60}
           className="object-cover w-full h-full hover:scale-110 transition-transform duration-300
             group-hover:brightness-110"
-          priority
+          // priority
         />
       </div>
     ),
@@ -45,7 +45,7 @@ const links = [
           height={60}
           className="object-cover w-full h-full hover:scale-110 transition-transform duration-300
             group-hover:brightness-110"
-          priority
+          // priority
         />
       </div>
     ),
@@ -67,7 +67,7 @@ const links = [
           height={60}
           className="object-cover w-full h-full hover:scale-110 transition-transform duration-300
             group-hover:brightness-110"
-          priority
+          // priority
         />
       </div>
     ),
@@ -89,7 +89,7 @@ const links = [
           height={60}
           className="object-cover w-full h-full hover:scale-110 transition-transform duration-300
             group-hover:brightness-110"
-          priority
+          // priority
         />
       </div>
     ),
@@ -111,7 +111,7 @@ const links = [
           height={60}
           className="object-cover w-full h-full hover:scale-110 transition-transform duration-300
             group-hover:brightness-110"
-          priority
+          // priority
         />
       </div>
     ),
@@ -133,7 +133,7 @@ const links = [
           height={60}
           className="object-cover w-full h-full hover:scale-110 transition-transform duration-300
             group-hover:brightness-110"
-          priority
+          // priority
         />
       </div>
     ),
@@ -155,7 +155,7 @@ const links = [
           height={60}
           className="object-cover w-full h-full hover:scale-110 transition-transform duration-300
             group-hover:brightness-110"
-          priority
+          // priority
         />
       </div>
     ),
