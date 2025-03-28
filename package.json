@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 3001",
-    "build": "cross-env NEXT_PUBLIC_GA_ID=$NEXT_PUBLIC_GA_ID next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "postbuild": "node scripts/generate-sitemap.js && next-sitemap",
