@@ -6,5 +6,5 @@ Allow: /
 Host: https://jeclat2k25.in
 
 # Sitemaps
-Sitemap: https://jeclat2k25.in/sitemap.xml
+Sitemap: https://www.jeclat2k25.in/sitemap.xml
 Sitemap: https://jeclat2k25.in/server-sitemap.xml

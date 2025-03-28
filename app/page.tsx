@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import CosmicLoader from "./components/ui/CosmicLoader";
+import styles from "./styles/utils.module.scss";
 
 const links = [
   {
