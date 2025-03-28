@@ -340,7 +340,7 @@ const TeamPage = () => {
               </h1>
               <div className="space-y-1">
                 <h2 className="text-transparent bg-clip-text bg-white font-sugarPeachy text-xl  tracking-wider">
-                  Presenting you the JECLAT 2K23 Core Team!{" "}
+                  Presenting you the JECLAT 2K25 Core Team!{" "}
                 </h2>
               </div>
             </div>
