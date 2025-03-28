@@ -78,19 +78,29 @@ const audiowide = Audiowide({
 });
 
 export const metadata: Metadata = {
-  title: "JECLAT-2K25",
-  description: `JECLAT, also known as 'The Queen of All Fests' is the biggest cultural
- extrava-ganza in North Bengal. It brings a plethora of events ranging
- from Music to Dance, from creative writing to Roadies , from local
- artists to nationwide famous celebrities like Mohammed Irfan and
- Anupam Roy !
- JECLAT brings a footfall of 
-over TEN THOUSAND young people from 
-around the region! The fest is filled 
-with fun, frolic and adventure and is 7 days long. 
-On this note, welcome to this edition of
- our fest, JECLAT 2025!
-`,
+  title: 'JECLAT 2K25 - The Queen of All Fests | JGEC Cultural Fest',
+  description: 'JECLAT is the annual cultural festival of Jalpaiguri Government Engineering College, featuring music, dance, fashion shows, gaming tournaments and more. Join us for an unforgettable celebration of talent and creativity.',
+  keywords: 'JECLAT, JGEC fest, cultural festival, college fest, Jalpaiguri, engineering college, music festival, dance competition',
+  openGraph: {
+    title: 'JECLAT 2K25 - The Queen of All Fests',
+    description: 'Experience North Bengal\'s biggest cultural festival at JGEC featuring music, dance, gaming and more!',
+    images: ['/og-image.jpg'],
+    type: 'website',
+    locale: 'en_IN',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'JECLAT 2K25 - The Queen of All Fests',
+    description: 'Experience North Bengal\'s biggest cultural festival at JGEC',
+    images: ['/twitter-image.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: 'https://jeclat2k25.in'
+  },
   icons: {
     icon: {
       url: "/logo.png",

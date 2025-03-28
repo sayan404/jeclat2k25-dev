@@ -26,9 +26,11 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed w-full z-50">
+    <header className="fixed w-full z-50" role="banner">
       <nav
         className={`${rajdhani.className} backdrop-blur-md bg-black/30 border-b border-white/10`}
+        role="navigation"
+        aria-label="Main navigation"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">

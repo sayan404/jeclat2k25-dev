@@ -478,6 +478,37 @@ const events = [
   },
 ];
 
+const eventStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Festival",
+  "name": "JECLAT 2K25",
+  "description": "Annual cultural festival of Jalpaiguri Government Engineering College",
+  "startDate": "2025-03-31",
+  "endDate": "2025-04-06",
+  "location": {
+    "@type": "Place",
+    "name": "Jalpaiguri Government Engineering College",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jalpaiguri",
+      "addressLocality": "Jalpaiguri",
+      "addressRegion": "West Bengal",
+      "postalCode": "735102",
+      "addressCountry": "IN"
+    }
+  },
+  "subEvents": events.map(event => ({
+    "@type": "Event",
+    "name": event.title,
+    "description": event.description,
+    "startDate": event.date + "T" + event.time.split(" - ")[0],
+    "location": {
+      "@type": "Place",
+      "name": event.venue
+    }
+  }))
+}
+
 export default function EventsPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -600,6 +631,10 @@ export default function EventsPage() {
           </div>
         </div>
       </main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(eventStructuredData) }}
+      />
     </>
   );
 }
