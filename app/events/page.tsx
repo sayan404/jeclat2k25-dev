@@ -34,6 +34,7 @@ import calliphony from "../assets/events/caliphony.jpg";
 import reunion from "../assets/events/reunion.png";
 import social from "../assets/events/social.jpg";
 import waves from "../assets/events/waves.jpg";
+import { event } from '../lib/analytics'
 
 const events = [
   // Pre Events
@@ -518,6 +519,14 @@ export default function EventsPage() {
     const timer = setTimeout(() => setIsLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    event({
+      action: 'page_view',
+      category: 'engagement',
+      label: 'events_page',
+    })
+  }, [])
 
   // Get unique categories
   const categories = useMemo(() => {

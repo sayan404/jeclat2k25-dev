@@ -1,21 +1,23 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = 'https://jeclat2k25.in'
+  
   const routes = [
     '',
     '/about',
     '/events',
-    '/social',
+    '/gallery',
+    '/contact',
     '/archive',
     '/team',
-    '/contact',
     '/merchandise',
-  ]
-
-  return routes.map((route) => ({
-    url: `https://jeclat2k25.in${route}`,
+  ].map((route) => ({
+    url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
-    changeFrequency: route === '' ? 'daily' : 'weekly',
+    changeFrequency: 'daily' as const,
     priority: route === '' ? 1 : 0.8,
   }))
+
+  return routes;
 } 

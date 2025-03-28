@@ -1,157 +1,29 @@
-import type { Metadata } from "next";
-import {
-  Geist,
-  Geist_Mono,
-  Doto,
-  Noto_Sans,
-  Poppins,
-  Press_Start_2P,
-  Cedarville_Cursive,
-  Playfair_Display,
-  Orbitron,
-  Rajdhani,
-  Audiowide,
-} from "next/font/google";
+import { Metadata } from "next";
+import { siteConfig } from "./seo.config";
 import "./globals.css";
 import "./styles/stars.css";
-import { Analytics } from "@vercel/analytics/next";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const getPoppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "900"],
-});
-
-const geistNoto = Noto_Sans({
-  variable: "--font-noto-sans",
-  subsets: ["latin"],
-});
-
-const pressStart2P = Press_Start_2P({
-  variable: "--font-press-start-2p",
-  subsets: ["latin"],
-  weight: ["400"],
-});
-
-const cedarvilleCursive = Cedarville_Cursive({
-  variable: "--font-cedarville-cursive",
-  subsets: ["latin"],
-  weight: ["400"],
-});
-
-const doto = Doto({
-  variable: "--font-doto",
-  subsets: ["latin"],
-  weight: ["400", "700", "500", "900"], // Specify the weights you need
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-});
-
-const orbitron = Orbitron({
-  variable: "--font-orbitron",
-  subsets: ["latin"],
-});
-
-const rajdhani = Rajdhani({
-  variable: "--font-rajdhani",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const audiowide = Audiowide({
-  variable: "--font-audiowide",
-  subsets: ["latin"],
-  weight: ["400"],
-});
+import { Analytics as VercelAnalytics } from "@vercel/analytics/react";
+import Script from 'next/script';
+import { GA_TRACKING_ID } from './lib/analytics';
+import Analytics from "./components/Analytics";
 
 export const metadata: Metadata = {
-  title: "JECLAT 2K25 | JGEC Annual Cultural Festival | The Queen of All Fests",
-  description:
-    "JECLAT 2K25 is North Bengal's biggest cultural festival at Jalpaiguri Government Engineering College. Experience 7 days of music, dance, fashion shows, gaming tournaments & celebrity performances. Join 10,000+ participants in this grand celebration.",
-  keywords:
-    "JECLAT, JECLAT 2K25, JGEC fest, Jalpaiguri cultural fest, North Bengal college fest, engineering college festival, JGEC annual fest, cultural events Bengal, college competitions, talent showcase, celebrity performances Bengal, fashion show Jalpaiguri, gaming tournament JGEC, music festival North Bengal, dance competition Jalpaiguri",
-  authors: [{ name: "JGEC Cultural Committee" }],
-  creator: "JGEC Cultural Committee",
-  publisher: "Jalpaiguri Government Engineering College",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  openGraph: {
-    title: "JECLAT 2K25 - North Bengal's Biggest Cultural Festival",
-    description:
-      "Join 10,000+ participants for 7 days of music, dance, gaming & more! Featuring celebrity performances, competitions & cultural events.",
-    images: [
-      {
-        url: "https://jeclat2k25.in/logo.png",
-        width: 1200,
-        height: 630,
-        alt: "JECLAT 2K25 Festival Banner",
-      },
-    ],
-    type: "website",
-    locale: "en_IN",
-    siteName: "JECLAT 2K25",
-  },
-  other: {
-    "og:site_name": "JECLAT 2K25",
-    "og:url": "https://jeclat2k25.in",
-    "og:image:width": "1200",
-    "og:image:height": "630",
-    "og:locale": "en_IN",
-    "og:type": "website",
-    "og:title": "JECLAT 2K25 - The Queen of All Fests | JGEC Cultural Festival",
-    "og:description":
-      "Experience North Bengal's biggest cultural extravaganza at JECLAT 2K25",
-    "fb:app_id": "YOUR_FACEBOOK_APP_ID",
-    "facebook-domain-verification": "YOUR_FACEBOOK_DOMAIN_VERIFICATION_CODE",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "JECLAT 2K25 - The Queen of All Fests",
-    description:
-      "North Bengal's biggest cultural festival with 10,000+ participants",
-    images: ["/twitter-image.jpg"],
-    creator: "@JECLAT2K25",
-    site: "@JECLAT2K25",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  alternates: {
-    canonical: "https://jeclat2k25.in",
-  },
-  category: "Cultural Festival",
+  title: siteConfig.title,
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: siteConfig.authors,
+  creator: siteConfig.creator,
+  themeColor: siteConfig.themeColor,
+  openGraph: siteConfig.openGraph,
+  twitter: siteConfig.twitter,
   metadataBase: new URL("https://jeclat2k25.in"),
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -204,7 +76,7 @@ export default function RootLayout({
       dir="ltr"
       itemScope
       itemType="http://schema.org/WebSite"
-      className={`${geistSans.variable} ${geistMono.variable} ${doto.variable} ${geistNoto.variable} ${getPoppins.variable} ${pressStart2P.variable} ${cedarvilleCursive.variable} ${playfair.variable} ${orbitron.variable} ${rajdhani.variable} ${audiowide.variable} antialiased`}
+      className="antialiased"
     >
       <head>
         <script
@@ -220,10 +92,29 @@ export default function RootLayout({
           hrefLang="x-default"
           href="https://jeclat2k25.in"
         />
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_TRACKING_ID}', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
       </head>
       <body>
-        {children}
-        <Analytics mode="production" />
+        <main>{children}</main>
+        <Analytics />
+        <VercelAnalytics />
       </body>
     </html>
   );
