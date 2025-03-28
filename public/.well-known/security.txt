@@ -1,0 +1,4 @@
+Contact: mailto:admin@jeclat2k25.in
+Expires: 2025-12-31T23:59:59.000Z
+Preferred-Languages: en, bn
+Canonical: https://jeclat2k25.in/.well-known/security.txt 

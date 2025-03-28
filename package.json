@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "postbuild": "next-sitemap --config next-sitemap.config.js",
-    "ping-google": "curl https://www.google.com/webmasters/tools/ping?sitemap=https://jeclat2k25.in/sitemap.xml"
+    "ping-google": "curl https://www.google.com/webmasters/tools/ping?sitemap=https://jeclat2k25.in/sitemap.xml",
+    "ping-search-engines": "node scripts/ping-search-engines.js"
   },
   "dependencies": {
     "@floating-ui/react": "^0.27.3",
@@ -21,6 +22,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.4.2",
     "googleapis": "^146.0.0",
+    "https": "^1.0.0",
     "lucide-react": "^0.475.0",
     "motion": "^12.4.2",
     "next": "15.1.6",

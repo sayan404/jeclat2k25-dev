@@ -78,11 +78,11 @@ const audiowide = Audiowide({
 });
 
 export const metadata: Metadata = {
-  title: "JECLAT 2K25 - The Queen of All Fests | JGEC Cultural Festival",
+  title: "JECLAT 2K25 | JGEC Annual Cultural Festival | The Queen of All Fests",
   description:
-    "Experience North Bengal's biggest cultural extravaganza at JECLAT 2K25. Join over 10,000 participants for 7 days of music, dance, fashion shows, gaming tournaments, and celebrity performances at Jalpaiguri Government Engineering College.",
+    "JECLAT 2K25 is North Bengal's biggest cultural festival at Jalpaiguri Government Engineering College. Experience 7 days of music, dance, fashion shows, gaming tournaments & celebrity performances. Join 10,000+ participants in this grand celebration.",
   keywords:
-    "JECLAT, JGEC fest, cultural festival, college fest, Jalpaiguri, engineering college, music festival, dance competition, North Bengal fest, celebrity performances, fashion show, gaming tournament",
+    "JECLAT, JECLAT 2K25, JGEC fest, Jalpaiguri cultural fest, North Bengal college fest, engineering college festival, JGEC annual fest, cultural events Bengal, college competitions, talent showcase, celebrity performances Bengal, fashion show Jalpaiguri, gaming tournament JGEC, music festival North Bengal, dance competition Jalpaiguri",
   authors: [{ name: "JGEC Cultural Committee" }],
   creator: "JGEC Cultural Committee",
   publisher: "Jalpaiguri Government Engineering College",
@@ -97,7 +97,7 @@ export const metadata: Metadata = {
       "Join 10,000+ participants for 7 days of music, dance, gaming & more! Featuring celebrity performances, competitions & cultural events.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://jeclat2k25.in/logo.png",
         width: 1200,
         height: 630,
         alt: "JECLAT 2K25 Festival Banner",
@@ -159,6 +159,8 @@ export default function RootLayout({
     alternateName: "The Queen of All Fests",
     url: "https://jeclat2k25.in",
     logo: "https://jeclat2k25.in/logo.png",
+    description:
+      "JECLAT is North Bengal's biggest cultural festival hosted by Jalpaiguri Government Engineering College",
     sameAs: [
       "https://www.facebook.com/ItIsOnn",
       "https://www.instagram.com/jeclat.jgec",
@@ -170,6 +172,29 @@ export default function RootLayout({
       addressRegion: "West Bengal",
       postalCode: "735102",
       addressCountry: "IN",
+    },
+    event: {
+      "@type": "Festival",
+      name: "JECLAT 2K25",
+      startDate: "2025-03-31",
+      endDate: "2025-04-06",
+      location: {
+        "@type": "Place",
+        name: "Jalpaiguri Government Engineering College",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Jalpaiguri",
+          addressRegion: "West Bengal",
+          addressCountry: "IN",
+        },
+      },
+      description:
+        "Annual cultural festival featuring music, dance, fashion shows, and gaming tournaments",
+      offers: {
+        "@type": "Offer",
+        url: "https://jeclat2k25.in/events",
+        availability: "https://schema.org/InStock",
+      },
     },
   };
 

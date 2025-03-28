@@ -1,11 +1,13 @@
+# *
 User-agent: *
 Allow: /
-
-# Block access to API routes and internal paths
 Disallow: /api/*
 Disallow: /_next/*
 Disallow: /static/*
 
+# Host
+Host: https://jeclat2k25.in
+
 # Sitemaps
 Sitemap: https://jeclat2k25.in/sitemap.xml
-Sitemap: https://jeclat2k25.in/server-sitemap.xml 
+Sitemap: https://jeclat2k25.in/server-sitemap.xml
