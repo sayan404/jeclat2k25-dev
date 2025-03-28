@@ -3,7 +3,6 @@
 import { useState, useEffect, Suspense } from "react";
 import Header from "../components/Header";
 import CosmicLoader from "../components/ui/CosmicLoader";
-import { useSearchParams } from "next/navigation";
 
 interface VideoEvent {
   id: string;
@@ -68,7 +67,6 @@ const pastEvents: VideoEvent[] = [
 
 // Create a separate component for the search functionality
 function SearchComponent() {
-  const searchParams = useSearchParams()
   const [selectedYear, setSelectedYear] = useState<string>("all");
   const [isLoading, setIsLoading] = useState(true);
 
