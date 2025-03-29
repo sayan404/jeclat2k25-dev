@@ -17,7 +17,7 @@ const pastEvents: VideoEvent[] = [
   {
     id: "1",
     title: "JECLAT 2K24",
-    date: "2025-12-10",
+    date: "2024-12-10",
     youtubeUrl: "https://www.youtube.com/watch?v=e-LnWZhW3Ck",
     thumbnailUrl: "https://img.youtube.com/vi/e-LnWZhW3Ck/maxresdefault.jpg",
   },

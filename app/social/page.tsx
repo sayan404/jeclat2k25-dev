@@ -20,6 +20,24 @@ interface Artist {
 
 const ARTISTS_DATA: Artist[] = [
   {
+    id: 23,
+    name: "The Highway Band",
+    image: "/assets/highway.jpg",
+    performance_year: 2024,
+    category: "Music",
+    description:
+    "A dynamic band known for their electrifying performances and a unique blend of rock and contemporary music.",
+  },
+  {
+    id: 22,
+    name: "TRAP-The Radical Array Project",
+    image: "/assets/trap.jpg",
+    performance_year: 2024,
+    category: "Music",
+    description:
+    "TRAP, short for The Radical Array Project, is a groundbreaking music ensemble that pushes the boundaries of creativity with their innovative compositions.",
+  },
+  {
     id: 2,
     name: "Mohammed Irfan",
     image: "/assets/mohammedirfan.jpg",
@@ -27,10 +45,6 @@ const ARTISTS_DATA: Artist[] = [
     category: "Music",
     description:
       "Renowned Bollywood playback singer known for his soulful voice and hit songs in multiple Indian languages",
-    // social_links: {
-    //   instagram: "https://instagram.com/whenchaimet",
-    //   youtube: "https://youtube.com/whenchaimet",
-    // },
   },
   {
     id: 3,
@@ -239,7 +253,7 @@ export default function SocialPage() {
                 >
                   All Years
                 </button>
-                {[2023, 2022, 2019, 2018, 2017].map((year) => (
+                {[2024, 2023, 2022, 2019, 2018, 2017].map((year) => (
                   <button
                     key={year}
                     onClick={() => setSelectedYear(year)}
